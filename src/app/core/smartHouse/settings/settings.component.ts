@@ -37,5 +37,5 @@ export class SettingsComponent implements OnInit {
   }
   updateInfos() {}
   changePassword() {}
-  comparePassword(){}
+  comparePassword() {}
 }
