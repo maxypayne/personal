@@ -1,0 +1,88 @@
+@import "../../../../styles/variables";
+#settings {
+  padding: 25px 50px 25px 0;
+  .settingsTitle {
+    color: white;
+    font-size: 30px;
+    margin-bottom: 25px;
+  }
+  .choicesContainer {
+    display: flex;
+    justify-content: space-between;
+    .choice {
+      border-radius: 3px;
+      width: calc(33% - 10px);
+      padding: 15px;
+      background-color: $grey2F;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      &.active {
+        background-color: #131A27;
+      }
+      &:nth-child(2) {
+        width: calc(34% - 10px);
+      }
+      .row1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .choiceTitle {
+          font-size: 17px;
+          color: #CDD3DD;
+        }
+        .dots {
+          width: 3px;
+          height: 15px;
+          background-image: url("../../../../assets/dots.svg");
+        }
+      }
+      .row2 {
+        display: flex;
+        height: 60px;
+        align-items: center;
+        padding-left: 20px;
+        padding-top: 20px;
+        .image {
+          flex-shrink: 0;
+          background-repeat: no-repeat;
+          margin-right: 20px;
+          &.login {
+            width: 30px;
+            height: 36px;
+            background-image: url("../../../../assets/settings/settingsLock.svg");
+          }
+          &.payement {
+            width: 42px;
+            height: 42px;
+            background-image: url("../../../../assets/settings/settingsDollar.svg");
+          }
+          &.devices {
+            width: 36px;
+            height: 36px;
+            background-image: url("../../../../assets/settings/settingsDevice.svg");
+          }
+        }
+        .text {
+          color: white;
+          font-size: 12px;
+        }
+      }
+      .more {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        color: $blue1F;
+        font-size: 12px;
+        margin-top: 20px;
+        .fleche {
+          width: 16px;
+          height: 16px;
+          margin-left: 10px;
+          background-image: url("../../../../assets/settings/settingsFleche.svg");
+        }
+      }
+    }
+  }
+
+}

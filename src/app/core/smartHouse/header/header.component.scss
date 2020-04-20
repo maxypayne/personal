@@ -1,0 +1,95 @@
+@import "../../../../styles/variables";
+#shHeader {
+  width: 100%;
+  height: 67px;
+  .shHeaderContainer {
+    border-bottom: 1px solid #2F3B52;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    .left {
+      height: 100%;
+      width: 250px;
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      border-right: 1px solid #2F3B52;
+      .shLogoContainer {
+        position: relative;
+        padding-right: 50px;
+        display: flex;
+        align-items: center;
+        .logoLines {
+          width: 19px;
+          height: 19px;
+          background-image: url("../../../../assets/loglines.png");
+          position: absolute;
+          background-size: 100% 100%;
+          top: 11px;
+          left: -4px;
+        }
+        .shlogo {
+          font-size: 20px;
+          color: white;
+        }
+      }
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding-right: 35px;
+      .rightLeft {}
+      .rightRight {
+        display: flex;
+        align-items: center;
+      }
+      .menuIcon {
+        background-image: url("../../../../assets/menuIcon.svg");
+        width: 20px;
+        height: 12px;
+        margin-left: 23px;
+      }
+      .serverIcon {
+        background-image: url("../../../../assets/server.svg");
+        width: 20px;
+        height: 16px;
+      }
+      .progressBar {
+        margin-right: 100px;
+        margin-left: 10px;
+        width: 115px;
+        height: 5px;
+        background-color: #1F8EFA;
+        border-radius: 10px;
+      }
+      .iconHelp {
+        background-image: url("../../../../assets/help.svg");
+        width: 20px;
+        height: 20px;
+      }
+      .iconmail {
+        background-image: url("../../../../assets/mail.svg");
+        width: 20px;
+        height: 16px;
+        margin-left: 20px;
+      }
+      .iconCloche {
+        background-image: url("../../../../assets/cloche.svg");
+        width: 17px;
+        height: 20px;
+        margin-left: 20px;
+      }
+      .userNameContainer {
+        display: flex;
+        align-items: center;
+        color: #CFD7DB;
+        margin-left: 22px;
+        .negative {
+          margin-left:5px;
+        }
+      }
+    }
+  }
+}

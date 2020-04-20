@@ -1,0 +1,22 @@
+<div id="cards">
+  <div class="addCardContainer">
+    <div class="addCard"></div>
+  </div>
+  <div class="cardsContainer">
+    <ng-container *ngFor="let card of cards; index as index">
+      <div class="card" [class.active]="card.status === 'on'">
+        <div class="statusContainer" (click)="changeStatus(index, card.status)">
+          <div class="changeStatus {{card.status === 'on' ? 'right' : 'left'}}"></div>
+        </div>
+        <div class="cardContent">
+          <div class="image {{card.id}}"></div>
+          <div class="cardInfos">
+            <p class="title">{{card.text}}</p>
+            <p class="blue">Active since</p>
+            <p class="blue">{{card.date}}</p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

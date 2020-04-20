@@ -1,0 +1,15 @@
+<div id="input">
+  <div class="inputContainer mb20">
+    <div class="inputContent">
+      <label for="username" >Username</label>
+      <input type="text" id="username"
+             name="username"
+             autocomplete="off"
+      >
+      <app-spinner *ngIf="isPending"></app-spinner>
+    </div>
+    <div class="errorMessage" *ngIf="isTaken">Username is already taken</div>
+    <span *ngIf="isRequired">This input is required</span>
+    <span *ngIf="isForbidden">This user is forbidden</span>
+  </div>
+</div>

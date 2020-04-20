@@ -1,0 +1,56 @@
+<div id="social" class="{{!cursorWhite ? 'darkMode' : 'lightMode'}}">
+  <div class="socialContainer">
+    <div class="head">
+      <div class="headLeft">
+        <p class="socialTitle">Social Media Dashboard</p>
+        <p class="description">Total Flllowers: 23,000</p>
+      </div>
+      <div class="headRight">
+        <p class="dark">
+          <span *ngIf="!cursorWhite">Dark Mode</span>
+          <span *ngIf="cursorWhite">Light mode</span>
+        </p>
+        <div id="curseur" class="" (click)="handleCursor()">
+          <div class="mooveCircle {{cursorWhite ? 'right' : 'left'}}"></div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="followersContainer">
+        <ng-container *ngFor="let follower of followers">
+          <div class="singleContainer">
+            <div class="border {{follower.id}}"></div>
+            <div class="username">
+              <div class="icon {{follower.id}}"></div>
+              <span>{{follower.username}}</span>
+            </div>
+            <span class="followersCount">{{follower.followers}}</span>
+            <span class="singleText">Followers</span>
+            <div class="today {{follower.today > 0 ? 'positive' : 'negative'}}">
+              <span class="icons {{follower.today > 0 ? 'positive' : 'negative'}}"></span>
+              <span>{{follower.today}} Today</span>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      <div class="overviewsTitle">Overview - Today</div>
+      <div class="overviewsContainer">
+        <ng-container *ngFor="let overview of overviews">
+          <div class="overviewContainer">
+            <div class="top">
+              <div class="title">{{overview.title}}</div>
+              <div class="icon {{overview.id}}"></div>
+            </div>
+            <div class="bottom">
+              <div class="times">{{overview.times}}</div>
+              <div class="percentage {{overview.percentage > 0 ? 'positive' : 'negative'}}">
+                <span class="icons {{overview.percentage > 0 ? 'positive' : 'negative'}}"></span>
+                <span>{{overview.percentage}} %</span>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+@import "../../../styles/variables";
+#smartHouse {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #232d43;
+  .mainHeader {
+    height: 67px;
+  }
+  @include media(desktop, both) {
+    .mainContainer {
+      display: flex;
+      padding-bottom: 30px;
+      .mainSidebar {
+        width: 250px;
+      }
+      .mainContent{
+        width: calc(100% - 250px);
+      }
+    }
+  }
+  @include media(small, both) {
+    .mainContainer {
+      display: flex;
+      .mainSidebar {
+        display: none;
+      }
+      .mainContent{
+        width: 100%;
+      }
+    }
+  }
+  input {
+    background-color: #21293b;
+  }
+}

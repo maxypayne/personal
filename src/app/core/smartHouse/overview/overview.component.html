@@ -1,0 +1,72 @@
+<div id="overview">
+  <div class="overviewTitle">Overview</div>
+  <div class="overviewContainer">
+    <div class="top">
+      <div class="cameraContainer box">
+        <div class="nav">
+          <div class="cameraTitle">Camera</div>
+          <ul class="sliderMenu">
+            <ng-container *ngFor="let item of menu; index as index">
+              <li class="item" [class.active]="active === item.id" (click)="handleCamera(item.id)">{{item.text}}</li>
+            </ng-container>
+          </ul>
+          <div class="dots"></div>
+        </div>
+        <div class="slider {{active}}"></div>
+      </div>
+      <div class="right">
+        <div class="consuptionRoomContainer box">
+          <div class="consRoomTitle">Consuption by room</div>
+          <div class="infos">
+<!--            <canvas id="myChart" width="10px" height="10px"></canvas>-->
+            <div class="chart"></div>
+            <div class="rows">
+              <ng-container *ngFor="let room of roomConsuption">
+                <div class="roomRow">
+                  <div class="cercle {{room.id}}"></div>
+                  <span class="roomText">{{room.text}}</span>
+                  <div class="percentage">{{room.percentage}}</div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+        <div class="consuptionDayContainer box">
+          <div class="consDayTitle">Consuption by day</div>
+          <div class="lines">
+            <ng-container *ngFor="let item of days">
+              <div class="line {{item.color}}">
+                <div class="verticalLine" [style.height.px]="item.height"></div>
+                <div class="circle"></div>
+                <span class="day">{{item.day}}</span>
+              </div>
+            </ng-container>
+          </div>
+          <button class="more">SEE MORE INFO</button>
+        </div>
+        <div class="deviceLimitContainer box">
+          <div class="deviceTitle">Device Limit</div>
+          <div class="imageContainer"></div>
+          <button class="more">SEE MORE INFO</button>
+        </div>
+      </div>
+    </div>
+    <div class="unitsContainer box">
+      <div class="unitsTitle">Status by units</div>
+      <div class="unitsContent">
+        <ng-container *ngFor="let unit of units">
+          <div class="unitContainer">
+            <div class="text">{{unit.text}}</div>
+            <div class="info">
+              <div class="value">{{unit.value}}</div>
+              <div class="unitStatus">
+                <div class="unit">{{unit.unit}}</div>
+                <div class="{{unit.flecheStatus}}"></div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

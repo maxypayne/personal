@@ -1,0 +1,139 @@
+@import "../../../styles/variables";
+#cards {
+  background-color: #212a3c;
+  padding: 25px;
+  border-top: 3px solid #2F3B52;
+  display: flex;
+
+  .addCardContainer {
+    border: 2px dashed #2F3B52;
+    border-radius: 5px;
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .addCard {
+      width: 42px;
+      height: 42px;
+      background-image: url("../../../assets/devices/addDevice.svg");
+    }
+  }
+  .cardsContainer {
+    margin-left: 24px;
+    display: flex;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .card {
+      background-color: $grey2F;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 6px 13px 0 rgba(21, 33, 56, 0.53);
+      margin-left: 24px;
+      width: 220px;
+      flex-shrink: 0;
+      &:first-child {
+        margin-left: 0;
+      }
+      &.active {
+        .cardContent {
+          .cardInfos {
+            .title {
+              color: white;
+              transition: 1s;
+            }
+
+            .blue {
+              color: #1F8EFA;
+              transition: 1s;
+            }
+          }
+        }
+      }
+      .statusContainer {
+        margin-left: auto;
+        width: 26px;
+        height: 11px;
+        background: #20293C;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+
+        .changeStatus {
+          width: 13px;
+          height: 13px;
+          border-radius: 50%;
+
+          &.left {
+            background-color: #70889E;
+            transition: all 300ms ease-in;
+          }
+
+          &.right {
+            background-color: #1F8EFA;
+            transform: translateX(13px);
+            transition: all 300ms ease-out;
+          }
+        }
+      }
+      .cardContent {
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+        .image {
+          background-size: cover;
+          &.outlet {
+            width: 33px;
+            height: 42px;
+            background-image: url("../../../assets/cards/cardsOutlet.svg");
+          }
+          &.camera {
+            width: 32px;
+            height: 38px;
+            background-image: url("../../../assets/cards/cardsCamera.svg");
+          }
+
+          &.light {
+            width: 37px;
+            height: 34px;
+            background-image: url("../../../assets/cards/cardsLight.svg");
+          }
+          &.wifi {
+            width: 40px;
+            height: 25px;
+            background-image: url("../../../assets/cards/cardsWifi.svg");
+          }
+          &.thermostat {
+            width: 26px;
+            height: 38px;
+            background-image: url("../../../assets/cards/cardsThermostat.svg");
+          }
+          &.speaker {
+            width: 38px;
+            height: 30px;
+            background-image: url("../../../assets/cards/cardsSpeaker.svg");
+          }
+        }
+        .cardInfos {
+          margin-left: 20px;
+          .title {
+            color: #98A7B9;
+            font-size: 15px;
+            line-height: 18px;
+            transition: 1s;
+          }
+          .blue {
+            color: #98A7B9;
+            font-size: 12px;
+            transition: 1s;
+          }
+        }
+      }
+    }
+  }
+}

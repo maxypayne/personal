@@ -1,0 +1,64 @@
+<div id="settings">
+  <div class="settingsTitle">Settings</div>
+  <div class="choicesContainer">
+    <ng-container *ngFor="let choice of choices">
+      <div class="choice" [class.active]="choice.id === activeChoice" (click)="handleActive(choice.id)">
+        <div class="row1">
+          <div class="choiceTitle">{{choice.title}}</div>
+          <div class="dots"></div>
+        </div>
+        <div class="row2">
+          <div class="image {{choice.id}}"></div>
+          <div class="text">{{choice.text}}</div>
+        </div>
+        <div class="more">
+          <p>SEE MORE</p>
+          <div class="fleche"></div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="detailsContainer">
+    <div class="detailsTitle">Details</div>
+    <div class="formContainer">
+      <form [formGroup]="form">
+        <div class="inputContainer">
+          <label class="inputLabel" for="username">Username</label>
+          <input class="inputHandler" type="text" id="username" formControlName="username" placeholder="Batman">
+        </div>
+        <div class="inputContainer">
+          <label class="inputLabel" for="email">Email</label>
+          <input class="inputHandler" type="text" id="email" formControlName="email" placeholder="example@email.com">
+        </div>
+        <div class="inputContainer">
+          <label class="inputLabel" for="tel">Username</label>
+          <input class="inputHandler" type="tel" id="tel" formControlName="tel" placeholder="063 333 333">
+        </div>
+        <div class="selectContainer">
+          <label for="cars">Choose a car:</label>
+          <select id="cars" formControlName="car">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select>
+        </div>
+        <p class="changePass" (click)="changePassword()">Change password</p>
+        <div class="inputContainer">
+          <label class="inputLabel" for="password">Your current password</label>
+          <input class="inputHandler" type="password" id="password" formControlName="password" placeholder="123456">
+        </div>
+        <div class="inputContainer">
+          <label class="inputLabel" for="newPassword">Your new password</label>
+          <input class="inputHandler" type="password" id="newPassword" formControlName="newPassword" placeholder="123456">
+        </div>
+        <div class="inputContainer">
+          <label class="inputLabel" for="newPasswordCompare">Compare password</label>
+          <input class="inputHandler" type="password" id="newPasswordCompare" formControlName="newPasswordCompare" placeholder="123456">
+        </div>
+        <div class="error">{{errMessage}}</div>
+        <button type="submit" class="submit" [disabled]="!form.valid" (click)="updateInfos()">Sign in</button>
+      </form>
+    </div>
+  </div>
+</div>

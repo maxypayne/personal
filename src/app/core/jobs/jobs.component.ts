@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from '../../app.service';
+import { Job } from '../tools/interfaces/job';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-jobs',
@@ -6,10 +9,45 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./jobs.component.scss']
 })
 export class JobsComponent implements OnInit {
-
-  constructor() { }
-
+  jobs: Array<Job>;
+  initialJobs: Array<Job>;
+  form: FormGroup;
+  constructor(private app: AppService) { }
   ngOnInit() {
+    this.getJobs();
+    this.form = new FormGroup({
+      filter: new FormControl(null, Validators.required),
+    });
   }
-
+  getJobs() {
+    this.app.get('jobs').subscribe(data => {
+      if (data) {
+        this.jobs = data['jobs'];
+        this.initialJobs = data['jobs'];
+      }
+    });
+  }
+  createJob() {
+    this.app.post('jobs/create', {name: 'first job'}).subscribe(res => {
+      console.log(res);
+    });
+  }
+  updateJob(id) {
+    this.app.post('jobs/update', {}).subscribe(res => {
+      console.log(res);
+    });
+  }
+  deleteJob(id) {
+    this.app.delete('jobs', id).subscribe(res => {
+      console.log(res);
+    });
+  }
+  handleFilter() {
+    console.log(this.form);
+    const { value: { filter } } = this.form;
+    this.initialJobs = this.jobs.filter(el => el.location.toLowerCase().includes(filter));
+    if (this.initialJobs.length === 0) {
+      this.initialJobs = this.jobs;
+    }
+  }
 }

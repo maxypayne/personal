@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="101.084" height="97.255" viewBox="0 0 101.084 97.255">
+  <defs>
+    <path id="path-3" fill-rule="evenodd" d="M71.25969305 18.25582808c-12.12987958-8.14416956-27.8711045-8.6678606-40.52040976-1.3480638-12.64930526 7.31979679-19.97868727 21.19379846-18.86699184 35.71388096 1.11169542 14.52008249 10.4686582 27.12873016 24.08630636 32.45665903 6.96666667 2.29790476 10.61421429-5.5615238 3.1897381-8.528-12.90590755-5.15322605-20.33502219-18.68332054-17.72224675-32.27621122 2.61277543-13.59289068 14.53514412-23.43882403 28.44096103-23.4875983 5.76459118-.02346722 11.40118367 1.69101594 16.16764286 4.91771428 5.76242857 3.9272381 10.38530953-3.94209523 5.225-7.44838095z"/>
+    <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="101.084" height="97.255" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-3"/>
+    </mask>
+    <ellipse id="ellipse-7" cx="89.141" cy="68.962" rx="8.708" ry="8.667"/>
+    <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="101.084" height="97.255" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#ellipse-7"/>
+    </mask>
+  </defs>
+  <g>
+    <g>
+      <path fill="rgb(62,78,108)" fill-rule="evenodd" d="M49.82943242 11.26633718c21.02429696 0 38.06785714 16.96201205 38.06785714 37.88571428 0 20.92370224-17.04356018 37.88571429-38.06785714 37.88571429S11.76157527 70.0757537 11.76157527 49.15205146c0-20.92370223 17.04356019-37.88571428 38.06785715-37.88571428z"/>
+      <path fill="rgb(36,46,66)" fill-rule="evenodd" d="M49.90905146 20.1806229c16.12137595 0 29.19033334 13.00642649 29.19033334 29.05066666 0 16.04424017-13.0689574 29.05066667-29.19033334 29.05066667s-29.19033333-13.0064265-29.19033333-29.05066667 13.0689574-29.05066667 29.19033333-29.05066667z"/>
+      <g>
+        <use fill="rgb(31,142,250)" xlink:href="#path-3"/>
+        <g mask="url(#mask-4)">
+          <rect width="63.695" height="77.257" x="0" y="0" fill="rgb(31,142,250)" rx="0" ry="0" transform="translate(11.76157527 11.26633718)"/>
+        </g>
+      </g>
+      <text font-size="0" style="white-space:pre">
+        <tspan x="33.511" y="57.89" fill="rgb(255,255,255)" font-family="Arial" font-size="28" font-weight="400" style="white-space:pre;text-transform:none">10</tspan>
+      </text>
+    </g>
+    <g>
+      <ellipse cx="89.141" cy="68.962" fill="rgb(36,46,66)" rx="11.943" ry="11.886"/>
+      <g>
+        <use fill="rgb(31,142,250)" xlink:href="#ellipse-7"/>
+        <g mask="url(#mask-8)">
+          <rect width="26.871" height="37.638" x="0" y="0" fill="rgb(31,142,250)" rx="0" ry="0" transform="translate(74.46157527 51.3806229)"/>
+        </g>
+      </g>
+      <text font-size="0" style="white-space:pre">
+        <tspan x="86.902" y="71.209" fill="rgb(255,255,255)" font-family="Arial" font-size="8" font-weight="400" style="white-space:pre;text-transform:none">5</tspan>
+      </text>
+    </g>
+  </g>
+</svg>
