@@ -4,7 +4,7 @@
     <div class="addDevice" (click)="addDevice()"></div>
   </div>
   <div *ngIf="!isWiting" class="devicesContainer">
-    <div class="devicesLabel">
+    <div class="devicesLabel" *ngIf="desktop">
       <ng-container *ngFor="let deviceLabel of devicesArr">
         <span class="deviceLabel {{deviceLabel.id}}">{{deviceLabel.text}}</span>
       </ng-container>
@@ -12,13 +12,17 @@
     <ng-container *ngFor="let device of devices; index as index">
       <div class="deviceContainer">
         <div class="imageContainer">
+          <div *ngIf="!desktop" class="line"></div>
           <div class="image {{device.id}}"></div>
         </div>
-        <div class="name">{{device.name}}</div>
-        <div class="location">{{device.location}}</div>
-<!--        <div class="statusContainer">-->
-<!--          <div class="status {{device.status}}"></div>-->
-<!--        </div>-->
+        <div class="name mobileRow">
+          <span class="label" *ngIf="!desktop">Name :</span>
+          <span>{{device.name}}</span>
+        </div>
+        <div class="location mobileRow">
+          <span class="label" *ngIf="!desktop">Location :</span>
+          <span>{{device.location}}</span>
+        </div>
         <div class="statusMainContainer">
           <div class="statusContainer" (click)="changeStatus(index, device['status'], device['id'])">
             <div class="changeStatus {{device['status'] === 'on' ? 'right' : 'left'}}"></div>
@@ -26,10 +30,13 @@
         </div>
         <div class="batteryContainer">
           <div class="batteryContent">
-            <div class="battery {{device.battery}}"></div>
+            <div class="battery {{device['battery']}}"></div>
           </div>
         </div>
-        <div class="date">{{device.date | date}}</div>
+        <div class="date mobileRow">
+          <span class="label" *ngIf="!desktop">Date :</span>
+          <span>{{device.date | date}}</span>
+        </div>
         <div class="dots"></div>
       </div>
     </ng-container>

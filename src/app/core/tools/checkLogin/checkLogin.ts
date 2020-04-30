@@ -6,8 +6,12 @@ import { AppService } from '../../../app.service';
 @Injectable({providedIn: 'root'})
 export class CheckLogin implements CanActivate {
   constructor(private app: AppService) {}
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
-    const isLog = this.app.getJwt();
-    return isLog ? true : this.app.goTo('smarthouse/login');
+  async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<any> {
+    // const isLog = this.app.getJwt();
+    let userExists;
+    await this.app.getUser().then(res => {
+      userExists = res;
+    });
+    return userExists ? true : this.app.goTo('smarthouse/login');
   }
 }

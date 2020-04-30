@@ -262,7 +262,7 @@
       }
     }
   }
-  @include media(small, both) {
+  @include media(mobile, both) {
     padding: 30px 0;
     .socialContainer {
       width: 100%;

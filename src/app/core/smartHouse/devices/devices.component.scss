@@ -1,5 +1,37 @@
 @import "../../../../styles/variables";
 #devices {
+  .image {
+    &.door {
+      width: 32px;
+      height: 63px;
+      background-image: url("../../../../assets/devices/door.svg");
+    }
+    &.motion {
+      width: 58px;
+      height: 52px;
+      background-image: url("../../../../assets/devices/motion.svg");
+    }
+    &.plug {
+      width: 55px;
+      height: 51px;
+      background-image: url("../../../../assets/devices/plug.svg");
+    }
+    &.smoke {
+      width: 63px;
+      height: 63px;
+      background-image: url("../../../../assets/devices/smoke.svg");
+    }
+    &.thermostat {
+      width: 61px;
+      height: 63px;
+      background-image: url("../../../../assets/devices/thermostat.svg");
+    }
+    &.camera {
+      width: 48px;
+      height: 66px;
+      background-image: url("../../../../assets/devices/camera.svg");
+    }
+  }
   @include media(desktop, both)  {
     width: 100%;
     padding: 20px 50px 50px 20px;
@@ -58,38 +90,6 @@
         .imageContainer {
           flex-shrink: 0;
           width: 14%;
-          .image {
-            &.door {
-              width: 32px;
-              height: 63px;
-              background-image: url("../../../../assets/devices/door.svg");
-            }
-            &.motion {
-              width: 58px;
-              height: 52px;
-              background-image: url("../../../../assets/devices/motion.svg");
-            }
-            &.plug {
-              width: 55px;
-              height: 51px;
-              background-image: url("../../../../assets/devices/plug.svg");
-            }
-            &.smoke {
-              width: 63px;
-              height: 63px;
-              background-image: url("../../../../assets/devices/smoke.svg");
-            }
-            &.thermostat {
-              width: 61px;
-              height: 63px;
-              background-image: url("../../../../assets/devices/thermostat.svg");
-            }
-            &.camera {
-              width: 48px;
-              height: 66px;
-              background-image: url("../../../../assets/devices/camera.svg");
-            }
-          }
         }
         .batteryContainer {
           padding-left: 10px;
@@ -177,9 +177,9 @@
       }
     }
   }
-  @include media(small, both)  {
+  @include media(mobile, both)  {
     width: 100%;
-    padding: 20px 50px 50px 20px;
+    padding: 20px;
     .devicesTop {
       margin-bottom: 20px;
       display: flex;
@@ -196,72 +196,44 @@
       }
     }
     .devicesContainer {
-      box-shadow: 0 6px 13px 0 rgba(21,33,56,0.53);
-      padding: 10px 20px;
-      background-color: #2F3B52;
-      border-radius: 5px;
-      .devicesLabel {
-        display: flex;
-        margin-bottom: 20px;
-        .deviceLabel {
-          flex-shrink: 0;
-          color: white;
-          font-size: 18px;
-          //&.device {
-          //  width: 120px;
-          //}
-          //&.name {
-          //  width: 190px;
-          //}
-          //&.location, &.battery, &.status {
-          //  width: 160px;
-          //}
-        }
-      }
       .deviceContainer {
-        height: 113px;
-        border-bottom: 1px solid #20293C;
-        display: flex;
-        align-items: center;
+        box-shadow: 0 6px 13px 0 rgba(21,33,56,0.53);
+        padding: 30px 20px;
+        background-color: #2F3B52;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        position: relative;
+        .mobileRow {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 5px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          .label {
+            color: white;
+          }
+        }
         .imageContainer {
-          flex-shrink: 0;
-          //width: 120px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          margin-bottom: 30px;
           .image {
-            &.door {
-              width: 32px;
-              height: 63px;
-              background-image: url("../../../../assets/devices/door.svg");
-            }
-            &.motion {
-              width: 58px;
-              height: 52px;
-              background-image: url("../../../../assets/devices/motion.svg");
-            }
-            &.plug {
-              width: 55px;
-              height: 51px;
-              background-image: url("../../../../assets/devices/plug.svg");
-            }
-            &.smoke {
-              width: 63px;
-              height: 63px;
-              background-image: url("../../../../assets/devices/smoke.svg");
-            }
-            &.thermostat {
-              width: 61px;
-              height: 63px;
-              background-image: url("../../../../assets/devices/thermostat.svg");
-            }
-            &.camera {
-              width: 48px;
-              height: 66px;
-              background-image: url("../../../../assets/devices/camera.svg");
-            }
+            z-index: 1;
+            background-color: #2F3B52;
+            margin-left: 30px;
+          }
+          .line {
+            width: 100%;
+            position: absolute;
+            border-bottom: 1px solid #232d43;
           }
         }
         .batteryContainer {
-          flex-shrink: 0;
-          //width: 160px;
+          position: absolute;
+          top: 10px;
+          right: 40px;
           .batteryContent {
             border-radius: 50%;
             background-color: #20293C;
@@ -286,8 +258,9 @@
           }
         }
         .statusMainContainer {
-          flex-shrink: 0;
-          //width: 160px;
+          position: absolute;
+          top: 23px;
+          right: 90px;
           .statusContainer {
             width: 26px;
             height: 11px;
@@ -328,6 +301,9 @@
           color: #70889E;
         }
         .dots {
+          position: absolute;
+          top: 20px;
+          right: 0;
           cursor: pointer;
           margin-left: auto;
           flex-shrink: 0;

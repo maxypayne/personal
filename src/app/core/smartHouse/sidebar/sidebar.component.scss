@@ -90,7 +90,8 @@
       }
     }
   }
-  @include media(small, both) {
-    //display: none;
+  @include media(mobile, both) {
+    background-color: red;
+    display: none;
   }
 }

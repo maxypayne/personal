@@ -20,6 +20,7 @@
             <input class="inputHandler" type="password" id="password" formControlName="password" placeholder="123456">
           </div>
           <div class="error">{{errMessage}}</div>
+          <app-spinner *ngIf="isPending"></app-spinner>
           <button type="submit" class="submit" [disabled]="!loginForm.valid" (click)="submitLogin()">Sign in</button>
         </form>
       </div>

@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AppService } from '../../../app.service';
 import { delay } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-devices',
   templateUrl: './devices.component.html',
   styleUrls: ['./devices.component.scss']
 })
-export class DevicesComponent implements OnInit {
+export class DevicesComponent implements OnInit, OnDestroy {
   devicesArr = [
     {id: 'device', text: 'Device' },
     {id: 'name', text: 'Name' },
@@ -18,8 +19,16 @@ export class DevicesComponent implements OnInit {
   ];
   devices = [];
   isWiting: boolean;
-  constructor(private app: AppService) { }
-
+  desktop: boolean;
+  desktopSubsc: Subscription;
+  constructor(private app: AppService) {
+    this.desktopSubsc = app.getDesktop().subscribe(desktop => {
+      this.desktop = desktop;
+    });
+  }
+  ngOnDestroy(): void {
+    this.desktopSubsc.unsubscribe();
+  }
   ngOnInit() {
     this.isWiting = true;
     this.app.get('devices')

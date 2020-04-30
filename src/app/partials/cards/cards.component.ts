@@ -18,7 +18,6 @@ export class CardsComponent implements OnInit {
   ngOnInit() {
   }
   changeStatus(index, status) {
-    const changeStatus = status === 'on' ? 'off' : 'on';
-    this.cards[index].status = changeStatus;
+    this.cards[index].status = status === 'on' ? 'off' : 'on';
   }
 }

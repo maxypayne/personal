@@ -33,7 +33,6 @@ export class PopupComponent implements OnInit, OnDestroy {
     this.state = false;
   }
   clickPopup(target) {
-    console.log(target.className);
     if (((target && target.className === 'popup')) && this.state) {
       this.closePopup();
     }

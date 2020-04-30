@@ -5,18 +5,6 @@
     margin-bottom: 20px;
     font-size: 12px;
   }
-  input:-webkit-autofill,
-  input:-webkit-autofill:hover,
-  input:-webkit-autofill:focus,
-  input:-webkit-autofill:active  {
-    -webkit-box-shadow: 0 0 0 30px #21293b inset !important;
-  }
-  input:-webkit-autofill {
-    -webkit-text-fill-color: #2f76ca !important;
-  }
-  input {
-    color: white;
-  }
   width: 100%;
   min-height: 100vh;
   background-color: $smartHouse;
@@ -55,22 +43,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 350px;
+        width: 300px;
         .inputLabel {
           color: white;
           margin-bottom: 5px;
         }
         .inputHandler {
-          background-color: #21293b;
-          border: 2px solid #2f76ca;
-          padding: 10px;
-          border-radius: 5px;
-          width: 100%;
           margin-bottom: 20px;
-          &::placeholder {
-            color: white;
-            opacity: 0.3;
-          }
         }
         .submit {
           background-color: #358ef7;
@@ -108,10 +87,13 @@
           color: white;
           margin-bottom: 20px;
         }
+        .formContainer {
+          width: 100%;
+        }
       }
     }
   }
-  @include media(small, both) {
+  @include media(mobile, both) {
     .loginLleft {
       display: none;
     }
@@ -121,31 +103,22 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      padding: 20px 40px;
       .loginRightContent {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
+        .formContainer {
+          width: 100%;
+        }
         .inputLabel {
           color: white;
           margin-bottom: 5px;
         }
 
         .inputHandler {
-          background-color: #21293b !important;
-          border: 2px solid #2f76ca;
-          padding: 10px;
-          border-radius: 5px;
-          width: 100%;
           margin-bottom: 20px;
-          color: white;
-          &:-webkit-autofill {
-            background-color: #21293b !important;
-          }
-          &::placeholder {
-            color: #2f76ca;
-          }
         }
         .submit {
           background-color: #358ef7;
@@ -157,7 +130,7 @@
         }
         .forgot {
           color: #677d94;
-          margin-top: 150px;
+          margin-top: 50px;
           .reset {
             color: $blue19;
             margin-left: 10px;

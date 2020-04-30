@@ -1,28 +1,24 @@
 @import "../../../../../styles/variables";
-#login {
+#signup {
   .error {
     color: $red;
     margin-bottom: 20px;
     font-size: 12px;
   }
-  input:-webkit-autofill,
-  input:-webkit-autofill:hover,
-  input:-webkit-autofill:focus,
-  input:-webkit-autofill:active  {
-    -webkit-box-shadow: 0 0 0 30px #21293b inset !important;
-  }
-  input:-webkit-autofill {
-    -webkit-text-fill-color: #2f76ca !important;
-  }
-  input {
-    color: white;
-  }
   width: 100%;
   min-height: 100vh;
   background-color: $smartHouse;
   display: flex;
+  .signSpinner {
+    position: absolute;
+    right: 15px;
+    bottom: 35px;
+  }
+  .formContainer {
+    width: 100%;
+  }
   @include media(desktop, both) {
-    .loginLleft {
+    .signupLleft {
       width: calc(100% - 500px);
       background-image: url("../../../../../assets/login.png");
       background-repeat: no-repeat;
@@ -39,19 +35,19 @@
         top: 60px;
         left: 100px;
       }
-      .loginText {
+      .signupText {
         font-size: 40px;
         color: $white;
         margin-left: 100px;
       }
     }
-    .loginRight {
+    .signupRight {
       width: 500px;
       flex-shrink: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      .loginRightContent {
+      .signupRightContent {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -80,6 +76,9 @@
           padding: 10px 0;
           margin-top: 20px;
           cursor: pointer;
+          &:disabled {
+            opacity: 0.3;
+          }
         }
         .forgot {
           color: #677d94;
@@ -107,18 +106,18 @@
       }
     }
   }
-  @include media(small, both) {
-    .loginLleft {
+  @include media(mobile, both) {
+    .signupLleft {
       display: none;
     }
-    .loginRight {
+    .signupRight {
       width: 100%;
       flex-shrink: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
-      .loginRightContent {
+      padding: 20px 40px;
+      .signupRightContent {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -153,7 +152,7 @@
         }
         .forgot {
           color: #677d94;
-          margin-top: 150px;
+          margin-top: 50px;
           .reset {
             color: $blue19;
             margin-left: 10px;

@@ -65,10 +65,10 @@ export class ReactiveFormsComponent implements OnInit, OnDestroy {
       this.usernameId = setTimeout(() => {
         console.log(control.value);
         this.app.post('users/checkUsername', { username: control.value})
-          .pipe(delay(1000))
+          .pipe(delay(1000000))
           .subscribe(data => {
             console.log(data);
-            this.isPendingUsername = false;
+            // this.isPendingUsername = false;
             if (data && data['usernameExists']) {
               console.log('ree');
               resolve({ usernameExists: data['usernameExists'] });
