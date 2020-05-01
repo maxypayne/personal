@@ -19,6 +19,7 @@ import { SpinnerModule } from '../tools/spinner/spinner.module';
 import { PopupModule } from '../tools/popup/popup.module';
 import { CardsModule } from '../../partials/cards/cards.module';
 import { CheckLogin } from '../tools/checkLogin/checkLogin';
+import { SliderModule } from '../../partials/slider/slider.module';
 
 const routes: Routes = [
   { path: '', component: SmartHouseComponent, children: [
@@ -59,6 +60,7 @@ const routes: Routes = [
     SpinnerModule,
     PopupModule,
     CardsModule,
+    SliderModule,
   ],
   exports: [
     SmartHouseComponent,

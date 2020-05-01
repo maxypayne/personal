@@ -1,0 +1,17 @@
+@import "../../../styles/variables";
+#slider {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(36, 46, 66, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .sliderContainer {
+    width: 500px;
+    height: 400px;
+    background-color: $grey2F;
+  }
+}

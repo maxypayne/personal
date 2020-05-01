@@ -15,6 +15,7 @@ export class AppService {
   limit = { jwt: 3600000, session: 172800000 };
   user: User = {};
   popupInfos = new Subject<{state: boolean, id: string, infos?: {}}>();
+  sliderInfos = new Subject<{state: boolean, images: []}>();
   desktop = new Subject();
   constructor(private http: HttpClient, private router: Router) {}
   get(url) {
