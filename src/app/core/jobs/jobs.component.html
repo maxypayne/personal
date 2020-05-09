@@ -1,6 +1,6 @@
 <div id="jobs">
   <div class="filter">
-    <form [formGroup]="form" (ngSubmit)="handleFilter('d')">
+    <form [formGroup]="form" (ngSubmit)="handleFilter()">
       <label for="filter"></label>
       <input type="text" id="filter" name="filter" formControlName="filter" ngModel>
       <span *ngIf="!form.get('filter').valid && form.get('filter').touched" class="red">Please set a value</span>
