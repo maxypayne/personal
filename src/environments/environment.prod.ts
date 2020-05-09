@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  uri: 'https://git.heroku.com/serene-anchorage-81506.git',
+  uri: 'https://serene-anchorage-81506.herokuapp.com',
 };
