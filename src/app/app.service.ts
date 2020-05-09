@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { User } from './core/tools/interfaces/user';
+import { environment } from '../environments/environment';
 @Injectable({
   providedIn: 'root',
 })
@@ -11,7 +12,7 @@ export class AppService {
     jwt: 'TOPWFC02GOVZ71CU8',
     jwtTime: 'TIR8ETWFV7QXOFRKE'
   };
-  uri = 'http://localhost:3000';
+  uri = environment.uri;
   limit = { jwt: 3600000, session: 172800000 };
   user: User = {};
   popupInfos = new Subject<{state: boolean, id: string, infos?: {}}>();
