@@ -12,6 +12,7 @@ export class SliderComponent implements OnInit, OnDestroy {
   state: boolean;
   id: string;
   images = [];
+  marginLeft = 0;
   constructor(private app: AppService) {
     this.popupSubs = app.sliderInfos.subscribe((data) => {
       this.handlePopup(data);
@@ -30,10 +31,18 @@ export class SliderComponent implements OnInit, OnDestroy {
   }
   closePopup() {
     this.state = false;
+    this.marginLeft = 0;
   }
-  clickPopup(target) {
-    if (((target && target.className === 'popup')) && this.state) {
+  clickSlider(target) {
+    if (((target && target.id === 'slider')) && this.state) {
       this.closePopup();
+    }
+  }
+  handleFleche(where) {
+    if (where === 'next') {
+      this.marginLeft = this.marginLeft === -(this.images.length - 1) * 700 ? 0 : this.marginLeft  -= 700;
+    } else if (where === 'prev') {
+      this.marginLeft = this.marginLeft === 0 ? -(this.images.length - 1) * 700  : this.marginLeft += 700;
     }
   }
 }
