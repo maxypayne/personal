@@ -25,7 +25,7 @@
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
     "@babel/compat-data": "^7.8.0",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "enhanced-resolve": "^4.1.1",
     "express": "^4.17.1",
     "path": "^0.12.7",
