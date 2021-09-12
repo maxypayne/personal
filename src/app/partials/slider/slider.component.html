@@ -1,0 +1,19 @@
+<div id="slider" *ngIf="state"  (click)="clickSlider($event.target)">
+  <div class="sliderContainer">
+    <div class="exitContainer icons iconDelete" (click)="closePopup()"><span class="exit"></span></div>
+    <div class="sliderContent">
+      <div class="carousel" [style.width]="images.length * 700" [style.margin-left.px]="marginLeft">
+        <ng-container *ngFor="let image of images">
+          <img [src]="image.url" alt="">
+        </ng-container>
+      </div>
+    </div>
+    <div class="nextContainer" (click)="handleFleche('next')"><span class="nextArrow"></span></div>
+    <div class="prevContainer" (click)="handleFleche('prev')"><span class="prevArrow"></span></div>
+  </div>
+  <div class="dotsContainer">
+    <ng-container *ngFor="let dot of images">
+      <div class="dot"></div>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+@import "../../../../styles/variables";
+#pong {
+  .win {
+    &.green { color: $green22 }
+    &.red { color: $red }
+  }
+}

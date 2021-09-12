@@ -1,0 +1,9 @@
+<div id="pong" style="align-items: center; display: flex; flex-direction: column;">
+  <canvas #canvas width="480" height="320" style="background-color: #eee"></canvas>
+  <div class="win green mt30" *ngIf="win">You win</div>
+  <div class="win red mt30" *ngIf="lost">You lost</div>
+  <div class="buttons mt50">
+    <button class="cta1 red" (click)="isPaused = true" [disabled]="isPaused">Pause</button>
+    <button class="cta1 ml30" (click)="play()" [disabled]="!isPaused">Play</button>
+  </div>
+</div>

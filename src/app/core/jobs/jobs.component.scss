@@ -1,0 +1,134 @@
+#jobs {
+  background-color: #f0f9fa;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  .ng-invalid {
+    color: red;
+  }
+  .jobContent {
+    width: 80%;
+    padding-top: 100px;
+    .jobBox {
+      padding: 40px;
+      margin-bottom: 20px;
+      box-shadow: 0 7px 14px 0 rgba(198,203,208,.5);
+      border-radius: 3px;
+      display: flex;
+      background-color: white;
+      height: 200px;
+      border-left: 7px solid #5ba4a3;
+      .image {
+        background-image: url("../../../assets/spBrands.png");
+        background-size: 416px 312px;
+        width: 88px;
+        height: 88px;
+        flex-shrink: 0;
+        &.account {
+          background-position: -8px -8px;
+        }
+        &.insure {
+          background-position: -112px -8px;
+        }
+        &.faceIt {
+          background-position: -8px -112px;
+        }
+        &.eyeCam {
+          background-position: -112px -112px;
+        }
+        &.loopStudio {
+          background-position: -216px -8px;
+        }
+        &.photosnap {
+          background-position: -216px -112px;
+        }
+        &.shortly {
+          background-position: -8px -216px;
+        }
+        &.myHome {
+          background-position: -112px -216px;
+        }
+        &.airFilter {
+          background-position: -216px -216px;
+        }
+        &.manage {
+          background-position: -216px -216px;
+        }
+      }
+      .infos {
+        margin-left: 40px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        .row1 {
+          display: flex;
+          align-items: center;
+          .company {
+            color: #789f9c;
+            font-weight: 700;
+            font-size: 18px;
+          }
+          .new {
+            background-color: #5da4a6;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-left: 15px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+          }
+          .featured {
+            background-color: #2a3939;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-left: 15px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+          }
+        }
+        .position {
+          color: #303938;
+          font-weight: 700;
+          font-size: 30px;
+        }
+        .row3 {
+          display: flex;
+          align-items: center;
+          .item {
+            color: #9d9f9e;
+          }
+          span {
+            background-color: #9d9f9e;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            margin: 0 10px;
+          }
+        }
+      }
+      .tools {
+        display: flex;
+        align-items: center;
+        font-family: 'Spartan', sans-serif;
+        margin-left: auto;
+        .item {
+          padding: 7px 10px;
+          background-color: #eef7f5;
+          border-radius: 2px;
+          color: #5f9590;
+          font-weight: 700;
+          margin-left: 10px;
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}

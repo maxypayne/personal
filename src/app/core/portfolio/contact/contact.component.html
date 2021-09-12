@@ -1,0 +1,21 @@
+<div id="contact">
+  <div class="contactContainer">
+    <div class="contactLeft">
+      <p class="q1">INFORMATION</p>
+      <p class="q2">CONTACT INFORMATION</p>
+      <p class="q3">Event definition is - somthing that happens occurre How evesnt sentence. Synonym when an unknown printer took a galley.</p>
+      <div class="adresse">
+        <p>OFFICE IN PARIS</p>
+        <p><span class="label">Rue : </span> <span class="value">200 rue saint martin</span></p>
+        <p><span class="label">Phone : </span> <span class="value">06 11 22 33 44</span></p>
+        <p><span class="label">Email : </span> <span class="value">info@exemple.com</span></p>
+      </div>
+    </div>
+    <div class="contactRight">
+      <app-inp [inpAttr]="{id: 'name', cssClass: 'contact'}" (changeVal)="handleChange($event)"></app-inp>
+      <app-inp class="mt12" [inpAttr]="{id: 'email', cssClass: 'contact'}" (changeVal)="handleChange($event)"></app-inp>
+      <app-textarea class="mt12" [areaAttr]="{ id: 'message', cssClass: 'dark' }" (changeVal)="handleChange($event)"></app-textarea>
+      <div class="submit" (click)="sendMessage()">Submit</div>
+    </div>
+  </div>
+</div>

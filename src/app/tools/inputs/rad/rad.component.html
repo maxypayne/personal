@@ -1,0 +1,122 @@
+<div id="radio">
+  <div #container class="radioContainer {{id}}">
+    <ng-container [ngSwitch]="radioType">
+      <ng-container *ngSwitchCase="'default'">
+        <div class="defaultRadio items{{choices.length}}">
+          <div class="item {{cssClass}} alignCenterXY" [class.isLock]="lock" *ngFor="let choice of choices" [class.active]="active === choice" (mouseenter)="handleMouse(true, choice)" (mouseleave)="handleMouse(false)" (click)="handleClick(choice, true, null, lock)">
+            <span class="check alignCenterXY" *ngIf="!hideCheck" [class.active]="active === choice">
+              <span class="checkActive" *ngIf="active === choice"></span>
+            </span>
+            <div class="radContent">
+              <div [innerHTML]="listOptions[choice]" class="choiceName"></div>
+              <span *ngIf="prixDatas" class="prix blue">
+                <span *ngIf="prixDatas[choice] !== undefined && prixDatas[choice] !== 0">
+                  <span *ngIf="choice === 'message' && id === 'personnalisation'">+</span>{{prixDatas[choice]}}
+                  <ng-container *ngIf="personnalisationPrix && (choice === 'eplaque' || choice === 'message')"> / plaque</ng-container>
+                </span>
+                <span *ngIf="prixDatas[choice] === undefined">- €</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngSwitchCase="'fullWidth'">
+        <div class="fullWidth">
+          <div class="item {{cssClass}}" *ngFor="let choice of choices" [class.active]="active === choice" (click)="handleClick(choice, true)">
+            <div class="left">
+              <p [innerHTML]="listOptions[choice]" class="choiceName"></p>
+            </div>
+            <p class="icons iconArrowBack2"></p>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngSwitchCase="'image'">
+        <div class="imageRadio">
+          <div class="item alignCenterXY" *ngFor="let choice of choices" [class.active]="active === choice" (mouseenter)="handleMouse(true, choice)" (mouseleave)="handleMouse(false)" (click)="handleClick(choice, true)">
+            <span class="check alignCenterXY" [class.active]="active === choice">
+              <span class="checkActive" *ngIf="active === choice"></span>
+            </span>
+            <div class="image {{formatWebp ? 'webp' : 'png'}} {{id}} {{choice}}"></div>
+            <div class="titre">{{listOptions[choice]}}</div>
+            <span *ngIf="prixDatas" class="prix blue">
+              <span *ngIf="prixDatas[choice] !== undefined">{{prixDatas[choice]}}</span>
+              <span *ngIf="prixDatas[choice] === undefined">- €</span>
+            </span>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngSwitchCase="'imageGrayBack'">
+        <div class="imageGrayBack items{{choices.length}}">
+          <div class="item {{id}}" [class.active]="active === choice" *ngFor="let choice of choices" (click)="handleClick(choice, true, $event)" (mouseenter)="handleMouse(true, choice)" (mouseleave)="handleMouse(false)">
+            <div class="top alignCenterXY">
+              <span class="check alignCenterXY" [class.active]="active === choice">
+                <span class="checkActive" *ngIf="active === choice"></span>
+              </span>
+              <div *ngIf="id === 'materiau' && formatImmat && typePlaque" class="image {{formatWebp ? 'webp' : 'png'}} {{id}} {{typePlaque}} {{formatImmat}} {{choice}}"></div>
+              <div *ngIf="id !== 'materiau'" class="image {{formatWebp ? 'webp' : 'png'}} {{id}} {{choice}}"></div>
+              <span class="showPhoto {{formatWebp ? 'webp' : 'png'}}" *ngIf="enableHover && desktop"></span>
+            </div>
+            <div class="bottom">
+              <div class="title" *ngIf="listOptions">{{listOptions[choice]}} {{typePlaque}}</div>
+              <div class="row">
+                <span *ngIf="dimensions && dimensions[typePlaque || choice]" class="dimensions">{{dimensions[typePlaque || choice]}}</span>
+                <span class="prix blue" *ngIf="prixDatas && prixDatas[choice] && prixDatas[choice] !== 0">{{prixDatas[choice]}}</span>
+                <span class="prix blue" *ngIf="id === 'fixation' && choice === 'offert' && prixDatas['premium'] !== 0">Gratuit</span>
+              </div>
+            </div>
+            <div *ngIf="showHover && choixOption === choice && hoverText && hoverText[choice].length > 0 && desktop" class="hoverInfos">
+              <ng-container *ngFor="let text of hoverText[choice]">
+                <p class="hoverRow alignCenter">
+                  <span class="circle"></span>
+                  <span class="text">{{text}}</span>
+                </p>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngSwitchCase="'list'">
+        <div class="listRadio" *ngFor="let choice of choices" (click)="handleClick(choice, true)" (mouseenter)="handleMouse(true, choice)" (mouseleave)="handleMouse(false)" >
+          <div class="itemLeft alignCenter">
+            <span class="check alignCenterXY" [class.active]="active === choice">
+              <span class="checkActive" *ngIf="active === choice"></span>
+            </span>
+            <span class="titre grey57">{{listOptions[choice]}}</span>
+          </div>
+          <div class="itemRight">
+            <span *ngIf="dimensions && dimensions[choice]" class="dimensions">{{dimensions[choice]}}</span>
+            <span *ngIf="prixDatas" class="prix blue">
+              <span *ngIf="prixDatas[choice] !== undefined">
+                {{prixDatas[choice]}}
+                <ng-container *ngIf="personnalisationPrix && (choice === 'eplaque' || choice === 'message')"> / plaque</ng-container>
+              </span>
+              <span *ngIf="prixDatas[choice] === undefined">- €</span>
+            </span>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngSwitchCase="'listRight'">
+        <div class="listRight">
+          <div class="label">{{label}}</div>
+          <div class="right">
+            <div class="choice alignCenter" *ngFor="let choice of choices" (click)="handleClick(choice, true)">
+              <span class="check alignCenterXY" [class.active]="active === choice">
+                <span class="checkActive" *ngIf="active === choice"></span>
+              </span>
+              <div class="textValue">{{listOptions[choice]}}</div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngSwitchCase="'curseur'">
+        <div class="curseurContainer" (click)="toggleCurseur()">
+          <div class="radioCurseur" [class.active]="active === 'O'" [class.lock]="lock">
+            <span class="elemCurseur" [class.active]="active === 'O'"></span>
+          </div>
+          <div class="labelCurseur" *ngIf="label">{{label}}</div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+  <div class="errorInfos mt15" [class.center]="centerErreurs.includes(id)" *ngIf="hasErr">{{errorMessage}}</div>
+</div>

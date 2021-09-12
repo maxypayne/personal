@@ -1,0 +1,268 @@
+@import "../../../../styles/variables";
+$radGrayBgLargeWidth: 289px;
+$radGrayBgxLargeWidth: 268px;
+.imageGrayBack {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  .item {
+    height: 210px;
+    width: 289px;
+    border: 1px solid $greyE1;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+    .top {
+      height: 130px;
+      background-color: $greyF6;
+      border-radius: 4px 4px 0 0;
+      box-shadow: 0 1px 0 0 $greyE1;
+      .image {
+        width: 176px;
+        height: 38px;
+        border-radius: 2px;
+        &.auto {
+          margin-top: 20px;
+        }
+        &.fixation {
+          background-size: 213px 150px;
+          &.webp { background-image: url('/assets/fixation.webp') }
+          &.png { background-image: url('/assets/fixation.png') }
+          &.offert {
+            width: 72px;
+            height: 80px;
+            background-position: -137px -4px;
+          }
+          &.premium {
+            width: 72px;
+            height: 80px;
+            background-position: -4px -61px;
+          }
+          &.kit {
+            width: 125px;
+            height: 54px;
+            background-position: -4px -4px;
+          }
+        }
+        &.materiau {
+          background-size: 624px 440px;
+          &.webp { background-image: url('/assets/plaques.webp') }
+          &.png { background-image: url('/assets/plaques.png') }
+          &.auto {
+            width: 212px;
+            height: 48px;
+            &.siv {
+              &.plexiglass {
+                background-position: -5px -387px;
+              }
+              &.aluminium {
+                background-position: -5px -271px;
+              }
+              &.relief {
+                background-position: -289px -121px;
+              }
+              &.collection {
+                background-position: -227px -271px;
+              }
+              &.diplomatique {
+                background-position: -5px -329px;
+              }
+            }
+            &.fni, &.dom {
+              &.plexiglass {
+                background-position: -289px -179px;
+              }
+              &.aluminium {
+                background-position: -5px -213px;
+              }
+              &.collection {
+                background-position: -289px -63px;
+              }
+              &.diplomatique {
+                background-position: -5px -329px;
+              }
+            }
+            &.dip {
+              &.diplomatique {
+                background-position: -5px -329px;
+              }
+            }
+            &.sig {
+              &.plexiglass {
+                background-position: -227px -329px;
+              }
+              &.aluminium {
+                background-position: -289px -5px;
+              }
+            }
+          }
+          &.moto {
+            width: 108px;
+            height: 68px;
+            &.siv {
+              &.plexiglass {
+                background-position: -147px -109px;
+              }
+              &.relief {
+                background-position: -511px -239px;
+              }
+              &.collection {
+                background-position: -511px -83px;
+              }
+            }
+            &.fni, &.dom {
+              &.plexiglass {
+                background-position: -511px -161px;
+              }
+              &.collection {
+                background-position: -511px -5px;
+              }
+            }
+          }
+          &.camion {
+            width: 132px;
+            height: 94px;
+            &.siv {
+              &.plexiglass {
+                background-position: -5px -5px;
+              }
+              &.relief {
+                background-position: -147px -5px;
+              }
+            }
+            &.fni, &.dom {
+              &.plexiglass {
+                background-position: -5px -109px;
+              }
+            }
+          }
+        }
+      }
+      .check {
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        background-color: white;
+      }
+      .showPhoto {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        width: 30px;
+        height: 30px;
+        background-size: 100% 100%;
+        cursor: pointer;
+        &.webp { background-image: url('/assets/appareilPhoto.webp') }
+        &.png { background-image: url('/assets/appareilPhoto.png') }
+      }
+    }
+    .bottom {
+      padding: 0 24px;
+      display: flex;
+      height: 80px;
+      flex-direction: column;
+      justify-content: center;
+      .title {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .dimensions {
+          color: $grey57;
+          font-size: 14px;
+        }
+      }
+    }
+    .hoverInfos {
+      position: absolute;
+      top: 224px;
+      left: -1px;
+      z-index: 999;
+      background-color: $grey57;
+      color: #FFF;
+      padding: 10px;
+      font-size: 15px;
+      border-radius: 5px;
+      .hoverRow {
+        width: 100%;
+        .text {
+          line-height: 24px;
+        }
+        .circle {
+          width: 6px;
+          height: 6px;
+          background-color: white;
+          margin-right: 10px;
+          border-radius: 50%;
+        }
+      }
+    }
+    &.active {
+      border-color: $blue19;
+      color: $blue19;
+      cursor: default;
+    }
+  }
+}
+@include media(Xlarge, both) {
+  .imageGrayBack {
+    .item {
+      width: $radGrayBgxLargeWidth;
+      margin-right: 15px;
+      &:nth-child(4) {
+        margin-right: 0;
+      }
+      &:nth-child(5) {
+        margin-top: 15px;
+      }
+    }
+  }
+  .hoverInfos {
+    width: $radGrayBgxLargeWidth;
+  }
+}
+@include media(large, both) {
+  .imageGrayBack {
+    .item {
+      width: $radGrayBgLargeWidth;
+      &:nth-child(1), &:nth-child(2), &:nth-child(4) {
+        margin-right: 15px;
+      }
+      &:nth-child(4), &:nth-child(5) {
+        margin-top: 15px;
+      }
+    }
+  }
+  .hoverInfos {
+    width: $radGrayBgLargeWidth;
+  }
+}
+@media screen and (max-width: 1024px) and (min-width: 601px) {
+  .imageGrayBack {
+    .item {
+      width: calc(50% - 6px);
+      margin-right: 0;
+      &:nth-child(1), &:nth-child(2) {
+        margin-bottom: 12px;
+      }
+      &:nth-child(odd) {
+        margin-right: 12px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+    .imageGrayBack {
+      .item {
+        width: 100%;
+        margin-right: 0;
+        &:not(:last-child) {
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }

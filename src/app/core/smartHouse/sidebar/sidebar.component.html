@@ -1,0 +1,17 @@
+<div id="sidebar">
+  <div class="homeContainer">
+    <div class="img"></div>
+    <div class="myHome">My home</div>
+    <div class="rue">150 Rue Saint Martin Paris, France</div>
+  </div>
+  <div class="menu">
+    <ng-container *ngFor="let item of menu">
+      <div class="menuItem" (click)="handleMenu(item.id)" [class.active]="active === item.id || hover === item.id"
+           (mouseenter)="handleMouse(true, item.id)" (mouseleave)="handleMouse(false)">
+        <div class="borderLeft" *ngIf="active === item.id || hover === item.id"></div>
+        <div class="image {{item.id}}"></div>
+        <span class="text">{{item.text}}</span>
+      </div>
+    </ng-container>
+  </div>
+</div>

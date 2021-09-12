@@ -1,0 +1,119 @@
+@import "../../../../styles/variables";
+
+.checkboxContainer {
+  display: inline-block;
+  cursor: pointer;
+  width: 100%;
+  min-height: 30px;
+  .check {
+    border: 2px solid $greyE1;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: white;
+    border-radius: 2px;
+    &.active {
+      background-color: $blue19;
+      border: 2px solid $blue19;
+    }
+  }
+  .defaultMode {
+    display: flex;
+    .text {
+      margin-top: -2px;
+      align-self: baseline;
+      font-size: 14px;
+      color: $grey57;
+      margin-left: 10px;
+    }
+  }
+  .imageMode {
+    border: 1px solid $greyE1;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    &.active {
+      border: 1px solid $blue19;
+    }
+    &:hover {
+      box-shadow: 0 7px 14px 0 $shadow198-05;
+    }
+    &:hover, &.active {
+      .title {
+        color: black;
+      }
+      .prix {
+        color: $blue19;
+      }
+    }
+    .imageContainer {
+      width: 100%;
+      height: 230px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      border-radius: 4px 4px 0 0;
+      background: linear-gradient(to bottom right, #E0ECDF 0%, #9BC7D1 100%);
+      .img {
+        background-size: 527px 222px;
+        &.webp { background-image: url('/assets/spServices.webp') }
+        &.png { background-image: url('/assets/spServices.png') }
+        &.serviceCg {
+          width: 269px;
+          height: 214px;
+          background-position: -4px -4px;
+          margin-top: 28px;
+        }
+        &.servicePl {
+          width: 242px;
+          height: 158px;
+          background-position: -281px -4px;
+        }
+      }
+    }
+    .textContainer {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 30px;
+      align-items: center;
+      box-sizing: border-box;
+      .title {
+        color: black;
+        line-height: 1;
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+      .text {
+        color: $grey57;
+        padding-right: 20px;
+      }
+    }
+  }
+  .priceMode {
+    display: flex;
+    min-height: 30px;
+    color: $grey57;
+    .text {
+      align-self: baseline;
+      margin-top: -2px;
+      margin-right: 15px;
+      margin-left: 10px;
+    }
+    .prix {
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+  }
+  @include media(desktop, both) {
+    .imageMode {
+      width: 380px;
+    }
+  }
+}

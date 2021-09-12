@@ -1,0 +1,332 @@
+@import "../../../../styles/variables";
+#radio {
+  .radioContainer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    &.etatVehicule {
+      .defaultRadio {
+        .item {
+          font-size: 18px;
+        }
+      }
+    }
+    .check {
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      border: 2px solid $greyE1;
+      &.active {
+        border-color: $blue19;
+      }
+      .checkActive {
+        background-color: $blue19;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+    }
+    .defaultRadio {
+      display: flex;
+      .item {
+        height: 70px;
+        border: 1px solid $greyE1;
+        border-radius: 5px;
+        color: $grey57;
+        background-color: white;
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+        &.priceBoldAndBlue {
+          .choiceName {
+            color: black;
+          }
+        }
+        .check {
+          position: absolute;
+          left: 25px;
+        }
+        &.active {
+          border-color: $blue19;
+          color: $blue19;
+          cursor: default;
+        }
+        &.active:hover {
+          opacity: 1;
+        }
+        &.isLock {
+          border: 1px solid $greyDF !important;
+          background-color: $greyDF;
+          cursor: default;
+          color: black;
+          &.active {
+            .check {
+              border: 2px solid $grey57 !important;
+              .checkActive {
+                background-color: $grey57;
+              }
+            }
+          }
+        }
+      }
+    }
+    .fullWidth {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      .item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        border: 1px solid $greyE1;
+        border-radius: 5px;
+        background-color: white;
+        cursor: pointer;
+        position: relative;
+        padding: 17px 30px;
+        margin-bottom: 12px;
+        color: black;
+        font-size: 18px;
+        .left {
+          padding-right: 15px;
+          .text {
+            color: $grey57;
+            margin-top: 5px;
+          }
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .iconArrowBack2 {
+          font-size: 24px;
+          transform: rotate(180deg);
+        }
+        &.active {
+          border-color: $blue19;
+        }
+        &:hover {
+          box-shadow: 0 7px 14px 0 $shadow198-05;
+        }
+      }
+    }
+    .listRadio {
+      display: flex;
+      position: relative;
+      width: 100%;
+      margin-bottom: 15px;
+      cursor: pointer;
+      justify-content: space-between;
+      align-items: center;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .itemLeft {
+        .check {
+          margin-right: 15px;
+        }
+      }
+      .itemRight {
+        display: flex;
+        color: $grey57;
+      }
+    }
+    .imageRadio {
+      display: flex;
+      flex-wrap: wrap;
+      .item {
+        border: 1px solid $greyE1;
+        border-radius: 5px;
+        background-color: white;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 15px;
+        padding: 24px;
+        flex-direction: column;
+        .check {
+          position: absolute;
+          top: 15px;
+          left: 15px;
+        }
+        .image {
+          height: 28px;
+          width: 60px;
+          margin-bottom: 10px;
+          &.format {
+            background-size: 97px 72px;
+            &.webp { background-image: url('/assets/spAutoType.webp') }
+            &.png { background-image: url('/assets/spAutoType.png') }
+            &.auto {
+              width: 41px;
+              height: 28px;
+              background-position: -4px -4px;
+            }
+            &.moto {
+              width: 32px;
+              height: 28px;
+              background-position: -4px -40px;
+            }
+            &.camion {
+              width: 40px;
+              height: 28px;
+              background-position: -53px -4px;
+            }
+          }
+        }
+        .text {
+          font-size: 16px;
+        }
+        &.active {
+          border-color: $blue19;
+          color: $blue19;
+          cursor: default;
+        }
+      }
+    }
+    .listRight {
+      width: 100%;
+      display: flex;
+      margin-bottom: 25px;
+      color: black;
+      .right {
+        display: flex;
+        .choice {
+          margin-left: 25px;
+          cursor: pointer;
+          .textValue {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+    .curseurContainer {
+      display: flex;
+      justify-content: flex-start;
+      .radioCurseur {
+        width: 37px;
+        min-width: 37px;
+        height: 22px;
+        border-radius: 11px;
+        margin-right: 15px;
+        background-color: $greyDe;
+        border: 1px solid $greyE1;
+        cursor: pointer;
+        display: flex;
+        &.active {
+          background-color: $green22;
+          border-color: $green22;
+          justify-content: flex-end;
+          .elemCurseur {
+            margin-right: -1px;
+          }
+        }
+        .elemCurseur {
+          margin-top: -1px;
+          margin-left: -1px;
+          width: 22px;
+          height: 22px;
+          border-radius: 11px;
+          display: block;
+          background-color: white;
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.07),
+          0 0 2px 1px rgba(0, 0, 0, 0.11), 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+          0 8px 18px 4px rgba(0, 0, 0, 0.08);
+        }
+      }
+      .labelCurseur {
+        font-size: 16px;
+        line-height: 22px;
+        cursor: pointer;
+        color: $grey57;
+        margin-left: 15px;
+      }
+    }
+    @include media(desktop, both) {
+      .defaultRadio {
+        color: $grey57;
+        width: 100%;
+        .priceBoldAndBlue {
+          height: 100px;
+        }
+        &.items1 {
+          .item {
+            width: 100%;
+            font-size: 18px;
+          }
+        }
+        &.items2 {
+          .item {
+            &:first-child {
+              margin-right: 12px;
+            }
+            width: calc(50% - 6px);
+            font-size: 18px;
+          }
+        }
+        &.items3 {
+          .item {
+            &:nth-child(1), &:nth-child(3) {
+              width: calc(33% - 8px);
+            }
+            &:nth-child(2) {
+              margin: 0 12px;
+              width: calc(34% - 8px);
+            }
+          }
+        }
+        &.items4 {
+          .item {
+            margin-right: 12px;
+            width: calc(25% - 9px);
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+      .imageRadio {
+        .item {
+          margin-right: 15px;
+          width: 208px;
+        }
+      }
+      .listRight {
+        justify-content: space-between;
+      }
+    }
+
+    @include media(small, both) {
+      flex-wrap: wrap;
+      .defaultRadio {
+        color: $grey57;
+        width: 100%;
+        flex-direction: column;
+        .item {
+          width: 100%;
+          margin-bottom: 12px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+      .imageRadio {
+        width: 100%;
+        .item {
+          width: 100%;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+      .listRight {
+        flex-direction: column;
+        .right {
+          margin-top: 15px;
+          align-self: flex-end;
+        }
+        justify-content: space-between;
+      }
+    }
+  }
+}

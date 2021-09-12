@@ -1,0 +1,385 @@
+// MEDIA
+
+@mixin media($type, $orientation) {
+  $XlargeMin: 1500px;
+  $largeMin: 1025px;
+  $smallMin: 0;
+
+  @if $type == Xlarge {
+    @media only screen and (min-width: $XlargeMin) {
+      @content;
+    }
+  } @else if $type == large {
+    @if $orientation == both {
+      @media only screen and (min-width: $largeMin) and (max-width: $XlargeMin - 1) {
+        @content;
+      }
+    } @else {
+      @media only screen and (min-width: $largeMin) and (max-width: $XlargeMin - 1) and (orientation: $orientation) {
+        @content;
+      }
+    }
+  } @else if $type == desktop {
+    @media only screen and (min-width: $largeMin) {
+      @content;
+    }
+  } @else if $type == mobile {
+    @if $orientation == both {
+      @media only screen and (min-width: $smallMin) and (max-width: $largeMin - 1) {
+        @content;
+      }
+    } @else {
+      @media only screen and (min-width: $smallMin) and (max-width: $largeMin - 1) and (orientation: $orientation) {
+        @content;
+      }
+    }
+  }
+}
+
+// DIMENSION
+
+$heightDash: 1200px;
+
+// FONT
+
+$font: 'Source Sans Pro', sans-serif;
+@mixin regularFont {
+  font-family: $font, 'Arial';
+  font-weight: 400;
+}
+.icons {
+  font-family: 'icomoon', sans-serif !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1;
+  &.iconMongodb:before {content: "\e900"}
+  &.iconNodejs:before {content: "\e901"}
+  &.iconAngular:before {content: "\e903"}
+  &.iconBootstrap:before {content: "\e904"}
+  &.iconAdd:before {content: "\e905"}
+  &.iconAddFull:before {content: "\e906"}
+  &.iconAddEmpty:before {content: "\e907"}
+  &.iconArrowBack:before {content: "\e909"}
+  &.iconDropdown:before {content: "\e90a"}
+  &.iconCalendar:before {content: "\e90b"}
+  &.iconCar:before {content: "\e90c"}
+  &.iconCheck:before {content: "\e911"}
+  &.iconClose:before {content: "\e912"}
+  &.iconCard:before {content: "\e913"}
+  &.iconDelete:before {content: "\e914"}
+  &.iconDocument:before {content: "\e915"}
+  &.iconDownlaod:before {content: "\e916"}
+  &.iconEdit:before {content: "\e917"}
+  &.iconError:before {content: "\e918"}
+  &.iconFlash:before {content: "\e919"}
+  &.iconHelp:before {content: "\e91a"}
+  &.iconLocationOff:before {content: "\e91b"}
+  &.iconLocationOn:before {content: "\e91c"}
+  &.iconLockFull:before {content: "\e91d"}
+  &.iconLockEmpty:before {content: "\e91e"}
+  &.iconMail:before {content: "\e91f"}
+  &.iconMenu:before {content: "\e920"}
+  &.iconDollar:before {content: "\e921"}
+  &.iconNotifFull:before {content: "\e922"}
+  &.iconNotifEmpty:before {content: "\e923"}
+  &.iconOngoing:before {content: "\e924"}
+  &.iconPeople:before {content: "\e925"}
+  &.iconPerson:before {content: "\e926"}
+  &.iconTel:before {content: "\e927"}
+  &.iconPlan:before {content: "\e928"}
+  &.iconReceipt:before {content: "\e92b"}
+  &.iconSearch:before {content: "\e92d"}
+  &.iconCamion:before {content: "\e92e"}
+  &.iconVisibilityOff:before {content: "\e930"}
+  &.icon-VisibilityOn:before {content: "\e931"}
+  &.iconLibrary:before {content: "\e932"}
+  &.iconHammer:before {content: "\e933"}
+  &.iconEuro:before {content: "\e934"}
+  &.iconShopping:before {content: "\e93b"}
+  &.iconClock:before {content: "\e94f"}
+  &.iconDatabase:before {content: "\e965"}
+  &.iconStar:before {content: "\e9d9"}
+  &.iconTerminal:before {content: "\ea82"}
+  &.iconGithub:before {content: "\eab1"}
+  &.iconHtml:before {content: "\eae8"}
+  &.iconCss:before {content: "\eae9"}
+  &.iconGit:before {content: "\eaea"}
+}
+// COLOR
+$white: #FFFFFF;
+$greyE1: #c1bebe; // contour
+$grey26: #26282D;
+$grey57: #57617A;
+$grey2F: #2F3B52;
+$greyf6: #f6f7fb;
+$black: #000000;
+$blue19: #199DFF;
+$blue1F: #1F8EFA;
+$green22: #22D089; //pour le menu des plaques dans le sidebar
+$green01: #018e98; //diplomatique background
+$orange: #FFB500;
+$orangeE2: #e27e5c; // diplomatique color/ border
+$orangeE3: #E39026; // tunnel orange color
+$red: #FF5F7E;
+$redF1: #F13959;
+$smartHouse: #252e41;
+$shadow198-05: rgba(198, 203, 208, 0.5);
+$greyDF: #DFE6EC;
+.alignCenterXY  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// BOUTON
+
+@mixin cta() {
+  border: 1px solid;
+  border-radius: 50px;
+  padding: 10px 25px;
+  font-weight: 600;
+  cursor: pointer;
+  &:disabled {
+    cursor: default;
+  }
+}
+@mixin cta1($color) {
+  @include cta();
+  @if $color == 'blue' {
+    background-color: $blue19;
+    border-color: $blue19;
+    color: $white;
+  } @else if $color == 'red' {
+    background-color: $red;
+    border-color: $red;
+    color: $white;
+  }
+  &:disabled {
+    background-color: $greyDF;
+    border-color: $greyDF;
+  }
+  &:not(:disabled) {
+    &:hover {
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+@mixin cta2($color) {
+  @include cta();
+  color: $grey57;
+  border-color: $greyE1;
+  @if $color == 'white' {
+    background-color: $white;
+  } @else if $color == 'transparent' {
+    background-color: transparent;
+  }
+  &:disabled {
+    color: $greyE1;
+  }
+  &:not(:disabled) {
+    &:hover {
+      border-color: $blue19;
+      color: $blue19;
+    }
+  }
+}
+@mixin cta3() {
+  @include cta();
+  background-color: $white;
+  border-color: $blue19;
+  color: $blue19;
+  &:disabled {
+    background-color: $greyDF;
+    border-color: $greyDF;
+  }
+  &:not(:disabled) {
+    &:hover {
+      background-color: $blue19;
+      color: $white;
+    }
+  }
+}
+
+// CHECKBOX
+
+@mixin load {
+  height: 22px;
+  width: 22px;
+  -webkit-animation: anim1 4.8s linear infinite;
+  animation: anim1 4.8s linear infinite;
+  margin: auto;
+  position: relative;
+  span {
+    display: block;
+    clip: rect(0, 22px, 22px, 11px);
+    -webkit-animation: anim2 1.2s linear infinite;
+    animation: anim2 1.2s linear infinite;
+    &::after {
+      content: '';
+      clip: rect(0, 22px, 22px, 11px);
+      border: 2px solid $blue19;
+      border-radius: 50%;
+      -webkit-animation: anim3 1.2s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+      animation: anim3 1.2s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+    }
+  }
+  span,
+  span::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: 22px;
+    width: 22px;
+  }
+  @-webkit-keyframes anim1 {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @keyframes anim1 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes anim2 {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(220deg);
+    }
+  }
+  @keyframes anim2 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(220deg);
+    }
+  }
+  @-webkit-keyframes anim3 {
+    0% {
+      -webkit-transform: rotate(-140deg);
+    }
+    50% {
+      -webkit-transform: rotate(-160deg);
+    }
+    100% {
+      -webkit-transform: rotate(140deg);
+    }
+  }
+  @keyframes anim3 {
+    0% {
+      transform: rotate(-140deg);
+    }
+    50% {
+      transform: rotate(-160deg);
+    }
+    100% {
+      transform: rotate(140deg);
+    }
+  }
+}
+$white-15: rgba(255, 255, 255, 0.15);
+$greyF5: #F5F6FA;
+$greyF6: #F6F6F6;
+$greyF0: #F0F2F5;
+$greyEB: #EBEDF0;
+$greyEE: #EEEFF0;
+$greyE1: #E1E1E1;
+$greyDF: #DFE6EC;
+$greyB2: #B2BECD;
+$grey81: #818BA5;
+$grey37: #373D4D;
+$grey26: #26282D;
+$greyDF: #DFE6EC;
+$blueB0: #d5d6d8;
+$black07: #071516;
+$greyDe: #DEDEDE;
+$grey57: #57617A;
+$blue1C: #1C37E0;
+$blue19: #199DFF;
+$green22: #22D089;
+$green01: #018e98;
+$orange: #FFB500;
+$orangeE2: #e27e5c;
+$red: #FF5F7E;
+$shadow198-03: rgba(198, 203, 208, 0.3);
+$shadow198-05: rgba(198, 203, 208, 0.5);
+$shadow38-04: rgba(38, 40, 45, 0.4);
+$shadow38-08: rgba(38, 40, 45, 0.8);
+$rgba25: rgba(25,157,255,0.05);
+
+.mt12 {
+  margin-top: 12px;
+}
+
+.white {
+  color: white;
+}
+
+.mt10 { margin-top: 10px }
+.mt20 { margin-top: 20px }
+.mt30 { margin-top: 30px }
+.mt40 { margin-top: 40px }
+.mt50 { margin-top: 50px }
+//right
+.mr10 { margin-right: 10px }
+.mr20 { margin-right: 20px }
+.mr30 { margin-right: 30px }
+.mr40 { margin-right: 40px }
+.mr50 { margin-right: 50px }
+// bottom
+.mb10 { margin-bottom: 10px }
+.mb20 { margin-bottom: 20px }
+.mb30 { margin-bottom: 30px }
+.mb40 { margin-bottom: 40px }
+.mb50 { margin-bottom: 50px }
+// left
+.ml10 { margin-left: 10px }
+.ml20 { margin-left: 20px }
+.ml30 { margin-left: 30px }
+.ml40 { margin-left: 40px }
+.ml50 { margin-left: 50px }
+
+
+// top
+.pt10 { padding-top: 10px }
+.pt20 { padding-top: 20px }
+.pt30 { padding-top: 30px }
+.pt40 { padding-top: 40px }
+.pt50 { padding-top: 50px }
+//right
+.pr10 { padding-right: 10px }
+.pr20 { padding-right: 20px }
+.pr30 { padding-right: 30px }
+.pr40 { padding-right: 40px }
+.pr50 { padding-right: 50px }
+// bottom
+.pb10 { padding-bottom: 10px }
+.pb20 { padding-bottom: 20px }
+.pb30 { padding-bottom: 30px }
+.pb40 { padding-bottom: 40px }
+.pb50 { padding-bottom: 50px }
+// left
+.pl10 { padding-left: 10px }
+.pl20 { padding-left: 20px }
+.pl30 { padding-left: 30px }
+.pl40 { padding-left: 40px }
+.pl50 { padding-left: 50px }

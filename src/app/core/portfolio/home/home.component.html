@@ -1,0 +1,47 @@
+<div id="home">
+  <div class="homeContainer">
+    <section class="ownerContainer">
+      <div class="cleft">
+        <h2 class="green8c hello">Hello!</h2>
+        <h1>I'am MAXIM LUCOV</h1>
+      </div>
+      <div class="cright">
+        <img src="/assets/home.png" alt="">
+      </div>
+    </section>
+    <section class="slillsContainer">
+      <div class="skillsLeft">
+        <img src="/assets/skills.png" alt="Sills image">
+      </div>
+      <div class="skillsRight">
+        <p class="mySkills">My skills</p>
+        <div class="skills">
+          <div class="skill" *ngFor="let skill of skills">
+            <div class="icons {{skill.icon}}"></div>
+            <div class="progress">
+              <p class="progressText">{{skill.text}}</p>
+              <div class="topLine">
+                <div class="insideLine {{skill.id}}"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="diversContainer">
+      <div class="diversDesc">
+        <p class="q1">Some information</p>
+        <h1 class="q2">There are interesting stuff about me</h1>
+      </div>
+      <div class="capabilities">
+        <div class="capability" *ngFor="let item of items">
+          <div class="icons {{item.icon}}"></div>
+          <div class="two">
+            <p class="label">{{item.label}}</p>
+            <p class="text">{{item.text}}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

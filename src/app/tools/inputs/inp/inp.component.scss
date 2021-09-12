@@ -1,0 +1,86 @@
+@import "../../../../styles/variables";
+#input {
+  .infoText {
+    margin-bottom: 8px;
+    text-align: right;
+    color: #57617A;
+    font-size: 16px;
+    line-height: 1;
+  }
+  .inputContainer {
+    position: relative;
+    border: 1px solid $greyE1;
+    border-radius: 5px;
+    background-color: $greyF5;
+    &.hasErr {
+      border-color: $red;
+    }
+    &.active {
+      border-color: $blue19;
+    }
+    &.isLock {
+      border-color: $greyDF;
+      background-color: $greyF5;
+    }
+    .iconCheck {
+      position: absolute;
+      right: 12px;
+      top: 18px;
+      line-height: 1;
+      color: $blue19;
+      font-size: 30px;
+    }
+    .inputContent {
+      font-size: 16px;
+      height: 42px;
+      display: flex;
+      padding: 0 10px;
+      align-items: center;
+      background-color: $greyF5;
+      border-radius: 5px;
+      &.toggleBackground {
+        background-color: white;
+        .elemInp {
+          background-color: white;
+        }
+      }
+      &.noRadius {
+        border-radius: 0 !important;
+        .elemInp {
+          border-radius: 0 !important;
+        }
+      }
+      .iconLeft {
+        color: $grey57;
+        line-height: 1;
+        margin-right: 10px;
+      }
+      .iconRight {
+        color: $grey57;
+        margin-left: 10px;
+        cursor: pointer;
+        .icon {
+          &.recherche {
+            color: $grey57;
+            font-size: 19px;
+          }
+        }
+      }
+      .elemInp {
+        width: 100%;
+        height: 100%;
+        color: black;
+        border-radius: 5px;
+        background-color: $greyF5;
+        &::placeholder {
+          color: $grey57;
+        }
+        &.isLock {
+          background-color: unset;
+          cursor: default;
+        }
+      }
+    }
+  }
+}
+

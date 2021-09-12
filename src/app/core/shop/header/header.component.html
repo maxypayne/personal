@@ -1,0 +1,13 @@
+<div id="shopHeader">
+  <div class="hleft">
+    <div class="logo">Shop</div>
+    <app-inp [inpAttr]="{id: 'search'}"></app-inp>
+  </div>
+  <div class="hright">
+    <div class="list">
+      <div *ngFor="let link of links">
+        <div class="link" (click)="handleLink(link.id)">{{link.text}}</div>
+      </div>
+    </div>
+  </div>
+</div>

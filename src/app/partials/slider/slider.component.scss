@@ -1,0 +1,92 @@
+@import "../../../styles/variables";
+#slider {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(58, 70, 93, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .sliderContainer {
+    background-color: $grey2F;
+    position: relative;
+    .exitContainer {
+      position: absolute;
+      right: -40px;
+      background-color: #657D95;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      line-height: 1;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .nextContainer {
+      position: absolute;
+      right: -70px;
+      top: calc(50% - 20px);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #20293C;
+      border-radius: 50%;
+      cursor: pointer;
+      .nextArrow {
+        width: 8px;
+        height: 12px;
+        background-repeat: no-repeat;
+        background-image: url("../../../assets/galerry/next.svg");
+      }
+    }
+    .prevContainer {
+      position: absolute;
+      left: -70px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #20293C;
+      border-radius: 50%;
+      cursor: pointer;
+      top: calc(50% - 20px);
+      .prevArrow {
+        width: 8px;
+        height: 12px;
+        background-repeat: no-repeat;
+        background-image: url("../../../assets/galerry/prev.svg");
+      }
+    }
+    .sliderContent {
+      display: flex;
+      overflow: hidden;
+      width: 700px;
+      transition: margin-left ease-out 500ms;
+      .carousel {
+        display: flex;
+        transition: margin-left ease-out 300ms;
+        img {
+          width: 700px;
+        }
+      }
+    }
+  }
+  .dotsContainer {
+    display: flex;
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #657D95;
+      margin-right: 3px;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<div id="jobs">
+  <div class="filter">
+    <form [formGroup]="form" (ngSubmit)="handleFilter()">
+      <label for="filter"></label>
+      <input type="text" id="filter" name="filter" formControlName="filter" ngModel>
+      <span *ngIf="!form.get('filter').valid && form.get('filter').touched" class="red">Please set a value</span>
+      <button>Submit</button>
+    </form>
+  </div>
+  <div class="jobContent">
+    <ng-container *ngFor="let job of initialJobs">
+      <div class="jobBox">
+        <div class="image {{job.logo}}"></div>
+        <div class="infos">
+          <div class="row1">
+            <div class="company">{{job.company}}</div>
+            <div class="new" *ngIf="job.new">NEW!</div>
+            <div class="featured" *ngIf="job.featured">FEATURED</div>
+          </div>
+          <div class="position">{{job.position}}</div>
+          <div class="row3">
+            <div class="item">{{job.postedAt}}</div>
+            <span></span>
+            <div class="item">{{job.contract}}</div>
+            <span></span>
+            <div class="item">{{job.location}}</div>
+          </div>
+        </div>
+        <div class="tools">
+          <div class="item">{{job.role}}</div>
+          <div class="item">{{job.level}}</div>
+          <ng-container *ngFor="let tool of job.tools">
+            <div class="item">{{tool}}</div>
+          </ng-container>
+          <ng-container *ngFor="let language of job.languages">
+            <div class="item">{{language}}</div>
+          </ng-container>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

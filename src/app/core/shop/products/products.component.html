@@ -1,0 +1,25 @@
+<div id="products">
+  <ng-container *ngIf="!wait else spinner">
+    <ng-container *ngIf="!hasId else singleProduct">
+      <div class="filters"></div>
+      <div class="productsContainer">
+        <ng-container *ngFor="let product of products">
+          <div class="product" (click)="goTo(product.id)">
+            <img src="/assets/shop/1.jpg" alt="">
+            <p class="productTitle">{{product.title}}</p>
+            <p class="productPrice">{{product.prix}}€</p>
+          </div>
+        </ng-container>
+        <button (click)="goTo('4321344')">Prod</button>
+      </div>
+    </ng-container>
+    <ng-template #singleProduct>
+      <app-product [product]="product"></app-product>
+    </ng-template>
+  </ng-container>
+  <ng-template #spinner>
+    <div class="productSpinner">
+      <app-spinner></app-spinner>
+    </div>
+  </ng-template>
+</div>

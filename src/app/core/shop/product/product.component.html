@@ -1,0 +1,27 @@
+<div id="product">
+  <div class="images">
+    <img class="activeImage" src="/assets/shop/{{activeImg}}.jpg" alt="">
+    <div class="smallImages">
+      <ng-container *ngFor="let image of product.images">
+        <img class="smallImage" [class.active]="activeImg === image.path" src="/assets/shop/{{image.path}}.jpg" alt="" (click)="changeImg(image.path)">
+      </ng-container>
+    </div>
+  </div>
+  <div class="productInfos">
+    <h2 class="productTitle">{{product.title}}</h2>
+    <div class="quantite">
+      <app-inp [pushDataNoEmit]="quantity" [inpAttr]="{id: 'quantite'}"></app-inp>
+      <div class="arrows ml20">
+        <div class="icons iconDropdown top" (click)="handleQuantity('add')"></div>
+        <div class="icons iconDropdown bottom" (click)="handleQuantity('sub')"></div>
+      </div>
+    </div>
+    <div class="colors">
+      <div class="color {{color}}" *ngFor="let color of product.colors"></div>
+    </div>
+    <button class="addToOrder white alignCenterXY">
+      <span class="icons iconShopping mr20"></span>
+      <span></span>Ajouter au panier
+    </button>
+  </div>
+</div>

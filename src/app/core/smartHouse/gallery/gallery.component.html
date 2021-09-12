@@ -1,0 +1,33 @@
+
+<!--<button class="button" (click)="creatRandomMonth(12)">click</button>-->
+<!--<button class="button" (click)="createImages()">click2</button>-->
+<!--<button class="button" (click)="getTime()">click3</button>-->
+<!--<button class="button" (click)="getImages()">click4</button>-->
+<!--&lt;!&ndash;<button class="button" (click)="sortByMonth()">sortByMonth</button>&ndash;&gt;-->
+<!--<button class="button" (click)="sortByYear()">sortByYear</button>-->
+
+<div id="gallery">
+  <div class="back" (click)="hideYears = false">Back</div>
+  <div class="yearsContianer" *ngIf="!hideYears">
+    <ng-container *ngFor="let year of years">
+      <div class="yearContainer" (click)="sortByYear2(year)">{{year}}</div>
+    </ng-container>
+  </div>
+  <div class="monthsContainer" *ngIf="hideYears">
+    <ng-container *ngFor="let imageRow of images; index as indexRow">
+      <div class="monthContainer">
+        <div class="default" (click)="handleActiveRow(indexRow)">
+          <div class="folderImg"></div>
+          <span class="monthName">{{monthLabels[indexRow]}}</span>
+          <span>Last open: june,11 2018 at 5:16 PM</span>
+        </div>
+        <div class="imagesContainer" *ngIf="activeRow === indexRow">
+          <ng-container *ngFor="let image of imageRow; index as index">
+<!--            <div class="image">{{image.name}}</div>-->
+            <img [src]="image.url" alt="" (click)="openPopup(imageRow)">
+          </ng-container>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

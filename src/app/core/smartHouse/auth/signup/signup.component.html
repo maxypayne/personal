@@ -1,0 +1,48 @@
+<div id="signup">
+  <div class="signupLleft">
+    <div class="logo"><b>Smart</b>Home</div>
+    <div class="signupText">
+      <p>Control your home</p>
+      <p>Connect your life</p>
+    </div>
+  </div>
+  <div class="signupRight">
+    <div class="signupRightContent">
+      <div class="row2">Sign up</div>
+      <div class="formContainer">
+        <form [formGroup]="signupForm">
+          <div class="inputContainer">
+            <label class="inputLabel" for="username">Username</label>
+            <input class="inputHandler" type="text" id="username" formControlName="username" placeholder="Batman">
+            <div class="signSpinner">
+              <app-spinner *ngIf="isPendingUsername"></app-spinner>
+            </div>
+            <div class="error" *ngIf="controls.username.errors && controls.username.errors['usernameExists']">This user is forbidden</div>
+          </div>
+          <div class="inputContainer">
+            <label class="inputLabel" for="email">Email</label>
+            <input class="inputHandler" type="text" id="email" formControlName="email" placeholder="example@email.com">
+            <div class="signSpinner">
+              <app-spinner *ngIf="isPendingEmail"></app-spinner>
+            </div>
+            <div class="error" *ngIf="controls.email.errors && controls.email.errors['emailExists']">This email is forbidden</div>
+          </div>
+          <div class="inputContainer">
+            <label class="inputLabel" for="password">Password</label>
+            <input class="inputHandler" type="password" id="password" formControlName="password" placeholder="123456">
+          </div>
+          <div class="error">{{errMessage}}</div>
+          <button type="submit" class="submit" [disabled]="!signupForm.valid" (click)="submitSignup()">Sign in</button>
+        </form>
+      </div>
+      <div class="forgot">
+        <span>Forgot your password?</span>
+        <span class="reset">Reset</span>
+      </div>
+      <div class="signupAccount">
+        <span>Already have an account?</span>
+        <span class="loginLink" [routerLink]="['/smarthouse/login']">Login</span>
+      </div>
+    </div>
+  </div>
+</div>

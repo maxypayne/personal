@@ -1,0 +1,40 @@
+@import "../../../../styles/variables";
+#textArea {
+  width: 100%;
+  position: relative;
+  .areaLabel {
+    position: absolute;
+    z-index: 0;
+    top: 25px;
+    left: 10px;
+    transition: top 200ms ease-in, font-size 200ms ease-in;
+    font-size: 18px;
+    color: $grey57;
+    line-height: 1;
+
+    &.labelTop {
+      top: 10px;
+      z-index: 1;
+      font-size: 14px;
+    }
+  }
+  textarea {
+    width: 100%;
+    border: 1px solid $greyE1;
+    resize: none;
+    padding: 10px;
+    height: 120px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    &::placeholder {
+      color: white;
+    }
+    &.active {
+      border: 1px solid $blue19;
+    }
+    &:focus {
+      border-color: transparent;
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<div id="textArea">
+  <div class="textAreaContainer" [class.hasErr]="showError && hasErr" [class.isLock]="lock" [ngClass]="cssClass">
+    <span class="areaLabel" *ngIf="!labelNone" [class.visHide]="!description || labelHide" [class.labelTop]="labelTop || areaElem.value || pushDataNoEmit" (mousedown)="areaElem.focus()">
+      <label [class.hasErr]="showError && hasErr" for="{{id}}">{{description}}</label>
+    </span>
+  <div class="textAreaContent" [class.active]="active" [class.isLock]="lock" [ngClass]="background">
+    <div *ngIf="icon" class="iconPosition" [ngClass]="icon" (click)="clickIcon()"><span class="icon {{id}}"></span></div>
+    <textarea #areaElem id="{{id}}" [class.active]="active && !hasErr && !lock" [ngClass]="icon ? icon : ''" [maxLength]="length"
+           (focus)="handleFocus()" (blur)="handleBlur()" (keyup)="handleKeyup($event.key)" (keydown)="handleKeydown($event.key)"
+           [attr.maxlength]="length" [readonly]="lock" [class.backgroundGray]="lock" [class.isLock]="lock" [placeholder]="placeholder || ''"
+    ></textarea>
+  </div>
+  </div>
+</div>

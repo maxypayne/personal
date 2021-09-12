@@ -1,0 +1,66 @@
+@import "../../../styles/variables";
+#smartHouse {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #232d43;
+  .inputContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px #21293b inset !important;
+  }
+  input:-webkit-autofill {
+    -webkit-text-fill-color: white;
+  }
+  input {
+    color: white;
+    background-color: #21293b;
+    border: 2px solid #2f76ca;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    &::placeholder {
+      color: white;
+      opacity: 0.3;
+    }
+  }
+  label {
+    color: white;
+    margin-bottom: 5px;
+  }
+  .mainHeader {
+    height: 67px;
+  }
+  @include media(desktop, both) {
+    .mainContainer {
+      display: flex;
+      padding-bottom: 30px;
+      .mainSidebar {
+        width: 250px;
+        flex-shrink: 0;
+      }
+      .mainContent{
+        width: 100%;
+      }
+    }
+  }
+  @include media(mobile, both) {
+    .mainContainer {
+      display: flex;
+      .mainSidebar {
+        display: none;
+      }
+      .mainContent{
+        width: 100%;
+      }
+    }
+  }
+  input {
+    background-color: #21293b;
+  }
+}

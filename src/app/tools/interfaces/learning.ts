@@ -1,0 +1,3 @@
+interface Human<Type> {
+
+}

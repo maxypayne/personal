@@ -1,0 +1,40 @@
+<div id="select">
+  <div #selectContainer class="selectContainer" [ngClass]="[type, cssClass]" [class.open]="listShow" (mouseenter)="handleMouseEnter()" (mouseleave)="handleMouseLeave()">
+    <div class="selLabel" *ngIf="!labelNone" [class.visHide]="labelHide" [class.labelTop]="value || valuePushed" [class.lockLabel]="lock">
+      <div [class.hasErr]="hasErr">{{label}}</div>
+    </div>
+    <div *ngIf="iconHover" class="iconContainer right">
+      <div class="iconHover">
+        <span class="nextHover">{{iconHoverContent}}</span>
+        <span class="triangle"></span>
+      </div>
+    </div>
+    <div class="selContent" [class.isLock]="lock">
+      <div #selectElem class="elemActive" [class.civilite]="id === 'civilite' && !listData[value]" [class.active]="listShow && !hasErr && !lock" [class.hasErr]="hasErr"
+           tabindex="0" (mousedown)="handleClickSelect($event)" (focus)="handleFocus(list)" (keydown)="handleKeyDown($event)"
+      >{{listData[value] || valuePushed || defaultValue}}</div>
+      <div #icon class="iconPosition right" (mousedown)="handleClickIcon($event)" (mouseenter)="handleHoverIcon(true)" (mouseleave)="handleHoverIcon(false)">
+      <span class="icons" [class.iconArrowDropdown]="!verifLabel && !lock" [class.active]="listShow && !hasErr && !lock && !verifLabel" [class.iconCheck]="verifLabel && value || verifLabel && listData[value]" [class.iconBlackLock]="lock"
+            [class.civilite]="id === 'civilite' && !listData[value]"></span>
+      </div>
+      <div class="elemContainer noScrollBar" [class.hide]="!listShow" [class.hasErr]="hasErr">
+        <div #list class="hideScrollBar" (scroll)="handleScroll($event)">
+          <ul class="options" #options>
+            <li *ngFor="let choice of choices; index as i" (mouseenter)="handleHover(i)" (mouseleave)="handleBlur()" (mouseup)="handleClick(choice, 'mouseup', $event)"
+                (touchmove)="handleTouchMove()" (touchend)="handleTouchEnd(choice)"
+                class="option" [class.hover]="i === elemHover" [class.active]="choice === value"
+            >{{listData[choice]}}</li>
+
+          </ul>
+          <div class="options" *ngIf="choices && choices.length === 0">
+            <div *ngIf="!noDynamiqueResult" class="loadContainer"><div class="load"><span></span></div></div>
+            <div class="option" *ngIf="noDynamiqueResult">Aucun résultat</div>
+          </div>
+        </div>
+        <div class="flecheContainer" #flecheDown [class.show]="showFleche && desktop" (mousedown)="handleNav( 'down')"><span class="icons iconArrowDropdown"></span></div>
+      </div>
+    </div>
+    <div *ngIf="showHoverBloc && hoverBlocText" class="hoverBloc" [innerHtml]="hoverBlocText"></div>
+  </div>
+  <div class="errorInfos mt15" *ngIf="hasErr">{{errorMessage}}</div>
+</div>

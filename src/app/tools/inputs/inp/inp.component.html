@@ -1,0 +1,19 @@
+<div id="input">
+  <div #container class="inputContainer"
+       [class.hasErr]="showError && hasErr && !optionnel" [class.active]="active && !hasErr && !lock" [class.isLock]="lock" [ngClass]="cssClass">
+    <div class="inputContent" [class.toggleBackground]="active || inputElem.value" [class.active]="active" [class.isLock]="lock" [ngClass]="background">
+      <div *ngIf="icon" class="iconLeft">
+        <div class="icons iconSearch"></div>
+      </div>
+      <div *ngIf="verifLabel" class="verifie"></div>
+      <input #inputElem type="{{inputType}}" id="{{id}}" autocomplete="off" class="elemInp" [ngClass]="icon ? icon : ''"
+             (focus)="handleFocus()" (blur)="handleBlur()" (keyup)="handleKeyup($event)" (keydown)="handleKeydown($event)"
+             [attr.maxlength]="length" [readonly]="lock" [class.backgroundGray]="lock" [class.isLock]="lock" [placeholder]="placeholder || ''"
+      />
+      <div *ngIf="icon && inputElem.value" class="iconRight" [ngClass]="icon" (click)="clickIcon('clean')" (mouseenter)="handleHoverIcon(true)" (mouseleave)="handleHoverIcon(false)">
+        <span class="icons iconCroix"></span>
+      </div>
+    </div>
+  </div>
+  <div class="errorInfos" *ngIf="showError && hasErr && errorMessage && !hideError">{{errorMessage}}</div>
+</div>

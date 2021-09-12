@@ -1,0 +1,52 @@
+<div id="reactiveForms">
+  <div class="reactiveFormsContainer">
+    <form [formGroup]="form">
+      <div class="inputContainer mb20">
+        <div class="inputContent">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" formControlName="username">
+          <app-spinner *ngIf="isPending && isPendingUsername"></app-spinner>
+        </div>
+        <div class="errorMessage" *ngIf="form.get('username').errors && form.get('username').errors['usernameExists']">Username is already taken</div>
+        <span *ngIf="form.get('username').touched && !form.get('username').value">This input is required</span>
+        <span *ngIf="form.get('username').errors && form.get('username').errors['forbiddenUser']">This user is forbidden</span>
+      </div>
+      <div class="inputContainer mb20">
+        <div class="inputContent">
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" formControlName="email">
+          <app-spinner *ngIf="isPending && isPendingEmail"></app-spinner>
+        </div>
+        <div class="errorMessage" *ngIf="form.get('email').errors && form.get('email').errors['emailExists']">Email is invalid or already taken</div>
+      </div>
+      <div class="inputContainer mb20">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" formControlName="password">
+        <app-password-check-strong *ngIf="form.value" [passwordToCheck]="form.value.password" (passwordStrength)="passwordValid($event)"></app-password-check-strong>
+      </div>
+      <div class="selectContainer">
+        <label for="cars">Choose a car:</label>
+        <select id="cars" formControlName="car">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+      </div>
+      <div formArrayName="hobbies" class="hobbies">
+        <p *ngIf="form.get('hobbies') && form.get('hobbies')['controls'].length">Hobbies</p>
+        <ng-container *ngFor="let hobby of form.get('hobbies')['controls']; index as index">
+          <div class="inputContainer mb20">
+            <div class="inputContent">
+              <label for="{{'id' + index}}"></label>
+              <input type="text" id="{{'id' + index}}" [formControlName]="index" placeholder="hobby {{index + 1}}">
+              <span class="icons delete" (click)="deleteHobby(index)"></span>
+            </div>
+          </div>
+        </ng-container>
+        <button (click)="addHobbies()">Add hobbies</button>
+      </div>
+      <button type="submit" class="cta1" [disabled]="!form.valid" (click)="handleFormData()">Submit</button>
+    </form>
+  </div>
+</div>

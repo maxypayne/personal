@@ -1,0 +1,57 @@
+@import "../../../../styles/variables";
+#reactiveForms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .reactiveFormsContainer {
+    width: 600px;
+    padding-top: 100px;
+    .hobbies {
+      .delete {
+        position: absolute;
+        font-size: 22px;
+        line-height: 1;
+        right: 10px;
+        bottom: 10px;
+        cursor: pointer;
+        color: #4C5270;
+      }
+      button {
+        background-color: #B637FB;
+        border-radius: 50px;
+        color: white;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+    }
+    .inputContainer {
+      .errorMessage {
+        color: $red;
+      }
+      &.mb20 {
+        margin-bottom: 20px;
+      }
+      .inputContent {
+        width: 100%;
+        position: relative;
+      }
+      #spinner {
+        position: absolute;
+        right: 20px;
+        bottom: 10px;
+      }
+      label {
+        color: $grey57;
+        margin-bottom: 5px;
+      }
+      input {
+        width: 100%;
+        border-radius: 5px;
+        height: 40px;
+        border: 1px solid $greyE1;
+        box-shadow: 0 7px 14px 0 $shadow198-05;
+        padding: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,212 @@
+@import "../../../../styles/variables";
+#select {
+  .infoText {
+    margin-bottom: 8px;
+    text-align: right;
+    color: #57617A;
+    font-size: 16px;
+    line-height: 1;
+  }
+  .hide {
+    display: none;
+  }
+  .lockLabel {
+    z-index: 10 !important;
+  }
+  .selectContainer {
+    position: relative;
+    &.changeStatut {
+      min-width: 10px;
+      transition: min-width ease 0.2s;
+      &.open {
+        min-width: 275px;
+      }
+      .selContent {
+        color: $grey57;
+      }
+      .icon {
+        &.isLock {
+          display: none;
+        }
+        &.arrowDown {
+          font-size: 15px;
+          right: 0;
+        }
+      }
+    }
+    &.noBorder {
+      .elemActive {
+        border: 0 !important;
+      }
+    }
+    .selContent {
+      position: relative;
+      color: black;
+      .civilite {
+        color: $grey57;
+      }
+      &.isLock {
+        cursor: default;
+        .elemActive {
+          border-color: $greyDF;
+          background-color: $greyDF;
+          cursor: default;
+        }
+      }
+      .elemActive {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        width: 100%;
+        background-color: transparent;
+        border: 1px solid $greyE1;
+        border-radius: 5px;
+        cursor: pointer;
+        line-height: 1;
+        padding: 25px 41px 10px 10px;
+        &.active {
+          border-color: $blue19;
+        }
+        &.hasErr {
+          border-color: $red;
+        }
+      }
+      .iconPosition {
+        .icons {
+          position: absolute;
+          top: 50%;
+          right: 15px;
+          transform: translateY(-50%);
+          &.active {
+            transform: translateY(-50%) rotate(180deg);
+          }
+          &.iconBlackLock {
+            font-size: 19px;
+            color: $grey57;
+          }
+          &.iconCheck {
+            color: $blue19;
+            font-size: 30px;
+          }
+        }
+      }
+      .elemContainer {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 7px 14px 0 $shadow198-05;
+        z-index: 2;
+        .options {
+          .option {
+            padding: 5px 15px 6px;
+            cursor: pointer;
+            &.hover {
+              background-color: $greyDF;
+              color: black;
+            }
+          }
+        }
+        .hideScrollBar {
+          padding-bottom: 0;
+        }
+        .flecheContainer {
+          display: none;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          height: 40px;
+          box-shadow: 0 10px 20px 0 rgba(29, 29, 31, 0.15);
+          margin: 10px auto;
+          border-radius: 50%;
+          background-color: white;
+          cursor: pointer;
+          &.show {
+            display: flex;
+          }
+          .iconArrowDropdown {
+            margin-top: 4px;
+            line-height: 1;
+            color: $blue19;
+            font-size: 28px;
+          }
+        }
+      }
+    }
+    @include media(desktop, both) {
+      .selLabel {
+        position: absolute;
+        z-index: 0;
+        line-height: 1;
+        cursor: pointer;
+        top: 28px;
+        left: 12px;
+        transition: top 100ms ease-in, font-size 100ms ease-in;
+        font-size: 18px;
+        color: $grey57;
+        font-weight: 400;
+        &.labelTop {
+          top: 10px;
+          font-size: 14px;
+        }
+      }
+      .selContent {
+        height: 70px;
+        .elemActive {
+          height: 70px;
+        }
+      }
+      .arrowDown {
+        font-size: 17px;
+      }
+      .elemContainer {
+        margin-top: 5px;
+        .options {
+          max-height: 186px;
+          .option {
+            font-size: 18px;
+            padding: 6px 0;
+          }
+        }
+      }
+    }
+    @include media(small, both) {
+      .selLabel {
+        position: absolute;
+        z-index: 0;
+        line-height: 1;
+        cursor: pointer;
+        top: 23px;
+        left: 12px;
+        transition: top 100ms ease-in, font-size 100ms ease-in;
+        font-size: 18px;
+        color: $grey57;
+        font-weight: 400;
+        &.labelTop {
+          top: 8px;
+          font-size: 14px;
+        }
+      }
+      .selContent {
+        height: 60px;
+        .elemActive {
+          height: 60px;
+        }
+      }
+      .arrowDown {
+        font-size: 17px;
+      }
+      .elemContainer {
+        margin-top: 5px;
+        .options {
+          max-height: 186px;
+          .option {
+            font-size: 18px;
+            padding: 6px 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+/* You can add global styles to this file, and also import other style files */
+@import "reset";
+@import "variables";
+@font-face {
+  font-family: 'icomoon';
+  src: url('../assets/fonts/icomoon.eot?t76gdo');
+  src: url('../assets/fonts/icomoon.eot?t76gdo#iefix')
+  format('embedded-opentype'), url('../assets/fonts/icomoon.ttf?t76gdo')
+  format('truetype'), url('../assets/fonts/icomoon.woff?t76gdo')
+  format('woff'), url('../assets/fonts/icomoon.svg?t76gdo#icomoon')
+  format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.noScrollBar {
+  overflow: hidden
+}
+.hideScrollBar {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  margin-bottom: 14px;
+  padding-bottom: 28px;
+  //padding-bottom: 15px
+}
+
+.hideScrollBar .noBottom {
+  padding-bottom: 0
+}
+
+.inputsLabel {
+  color: #717c99;
+  line-height: 1;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 20px 0 5px
+}
+
+.cta1 {
+  @include cta1('blue');
+
+  &.red {
+    @include cta1('red');
+  }
+}
+.error {
+  color: $red;
+}
+.mt10 { margin-top: 10px }
+.mt12 { margin-top: 12px };
+.mt15 { margin-top: 15px }
+.mt20 { margin-top: 20px }
+.mt30 { margin-top: 30px }
+.mt40 { margin-top: 40px }
+.mt50 { margin-top: 50px }
+//right
+.mr10 { margin-right: 10px }
+.mr20 { margin-right: 20px }
+.mr30 { margin-right: 30px }
+.mr40 { margin-right: 40px }
+.mr50 { margin-right: 50px }
+// bottom
+.mb5 { margin-bottom: 5px }
+.mb10 { margin-bottom: 10px }
+.mb20 { margin-bottom: 20px }
+.mb30 { margin-bottom: 30px }
+.mb40 { margin-bottom: 40px }
+.mb50 { margin-bottom: 50px }
+// left
+.ml10 { margin-left: 10px }
+.ml20 { margin-left: 20px }
+.ml30 { margin-left: 30px }
+.ml40 { margin-left: 40px }
+.ml50 { margin-left: 50px }
+
+
+// top
+.pt10 { padding-top: 10px }
+.pt20 { padding-top: 20px }
+.pt30 { padding-top: 30px }
+.pt40 { padding-top: 40px }
+.pt50 { padding-top: 50px }
+//right
+.pr10 { padding-right: 10px }
+.pr20 { padding-right: 20px }
+.pr30 { padding-right: 30px }
+.pr40 { padding-right: 40px }
+.pr50 { padding-right: 50px }
+// bottom
+.pb10 { padding-bottom: 10px }
+.pb20 { padding-bottom: 20px }
+.pb30 { padding-bottom: 30px }
+.pb40 { padding-bottom: 40px }
+.pb50 { padding-bottom: 50px }
+// left
+.pl10 { padding-left: 10px }
+.pl20 { padding-left: 20px }
+.pl30 { padding-left: 30px }
+.pl40 { padding-left: 40px }
+.pl50 { padding-left: 50px }

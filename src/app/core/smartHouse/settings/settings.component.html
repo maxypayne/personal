@@ -1,0 +1,135 @@
+<div id="settings">
+  <div class="settingsTitle">Settings</div>
+  <div class="choicesContainer">
+    <ng-container *ngFor="let choice of choices">
+      <div class="choice" [class.active]="choice.id === activeChoice" (click)="handleActive(choice.id)">
+        <div class="row1">
+          <div class="choiceTitle">{{choice.title}}</div>
+          <div class="dots"></div>
+        </div>
+        <div class="row2">
+          <div class="image {{choice.id}}"></div>
+          <div class="text">{{choice.text}}</div>
+        </div>
+        <div class="more">
+          <p>SEE MORE</p>
+          <div class="fleche"></div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="settingsContainer"  *ngIf="activeChoice === 'login'">
+    <div class="formsContainer">
+      <div class="infosForm">
+        <div class="formTitle">Change your data</div>
+        <form [formGroup]="form">
+          <div class="inputContainer">
+            <label class="inputLabel" for="username">Username</label>
+            <input class="inputHandler" type="text" id="username" formControlName="username" placeholder="Batman">
+          </div>
+          <div class="inputContainer">
+            <label class="inputLabel" for="email">Email</label>
+            <input class="inputHandler" type="text" id="email" formControlName="email" placeholder="example@email.com">
+          </div>
+          <div class="inputContainer">
+            <label class="inputLabel" for="tel">Telephone</label>
+            <input class="inputHandler" type="tel" id="tel" formControlName="tel" placeholder="06 33 33 33 33">
+          </div>
+          <!--        <div class="selectContainer">-->
+          <!--          <label for="cars">Choose a car:</label>-->
+          <!--          <select id="cars" formControlName="car">-->
+          <!--            <option value="volvo">Volvo</option>-->
+          <!--            <option value="saab">Saab</option>-->
+          <!--            <option value="mercedes">Mercedes</option>-->
+          <!--            <option value="audi">Audi</option>-->
+          <!--          </select>-->
+          <!--        </div>-->
+          <button type="submit" class="updateBtn" (click)="addEmail()">Update infos</button>
+        </form>
+      </div>
+      <div class="passswordForm">
+        <div class="formTitle">Change your password</div>
+        <form [formGroup]="passwordForm">
+          <div class="inputContainer">
+            <label class="inputLabel" for="password">Old password</label>
+            <input class="inputHandler" type="password" id="password" formControlName="currentPassword" placeholder="123456">
+            <div class="error"></div>
+          </div>
+          <ng-container>
+            <div class="inputContainer">
+              <label class="inputLabel" for="newPassword">New password</label>
+              <input class="inputHandler" type="password" id="newPassword" formControlName="newPassword" placeholder="123456">
+            </div>
+            <div class="inputContainer">
+              <label class="inputLabel" for="newPasswordCompare">Confirm new password</label>
+              <input class="inputHandler" type="password" id="newPasswordCompare" formControlName="comparePassword" placeholder="123456">
+            </div>
+          </ng-container>
+          <div class="messagesContainer" *ngIf="passwordMessage || isPendingPassword">
+            <app-spinner *ngIf="isPendingPassword"></app-spinner>
+            <div class="{{isPassUpdated ? 'succes' : 'error'}}" *ngIf="passwordMessage" [class.green]="isPassUpdated">{{passwordMessage}}</div>
+          </div>
+          <button type="submit" class="updateBtn" (click)="updatePassword()">Update password</button>
+        </form>
+      </div>
+    </div>
+    <div class="settingsRow">
+      <div class="notificationsContainer">
+        <ng-container *ngFor="let notif of notifs; index as index">
+          <div class="notif">
+            <div class="left">
+              <p class="notifTitle">{{notif.title}}</p>
+              <p class="notifText">{{notif.text}}</p>
+            </div>
+            <div class="statusContainer" (click)="changeStatus(index, notif.status)">
+              <div class="changeStatus {{notif.status === 'on' ? 'right' : 'left'}}"></div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      <div class="otherSettings">
+        <ng-container *ngFor="let item of otherSettings; index as index">
+          <div class="row">
+            <p class="rowTitle">{{item.title}}</p>
+            <div class="right">
+              <div class="enable" (click)="handleItem(index, 'on')">
+                <div class="cercle">
+                  <div class="cercleBlue" *ngIf="item.status === 'on'"></div>
+                </div>
+                <p class="title">
+                  <span *ngIf="item.id === 'color'">Dark</span>
+                  <span *ngIf="item.id !== 'color'">Enable</span>
+                </p>
+              </div>
+              <div class="disable"  (click)="handleItem(index, 'off')">
+                <div class="cercle">
+                  <div class="cercleBlue" *ngIf="item.status === 'off'"></div>
+                </div>
+                <p class="title">
+                  <span *ngIf="item.id === 'color'">Clear</span>
+                  <span *ngIf="item.id !== 'color'">Disable</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="cardsContainer" *ngIf="activeChoice === 'payement'">
+    <ng-container *ngFor="let card of cards">
+      <div class="card {{card.brand}}">
+        <div class="row1">
+          <span class="row1Title">Credit card</span>
+          <div class="brand"></div>
+        </div>
+        <div class="sim"></div>
+        <div class="number">{{card.number}}</div>
+        <div class="lastRow">
+          <div class="name">{{card.name}}</div>
+          <div class="expire">{{card.expire}}</div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

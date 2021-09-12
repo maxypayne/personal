@@ -1,0 +1,31 @@
+<div class="checkboxContainer" [ngClass]="cssClass" (click)="handleClick($event)">
+  <ng-container [ngSwitch]="type">
+    <ng-container *ngSwitchCase="'default'">
+      <div class="defaultMode {{id}}">
+        <div class="check alignCenterXY" [class.active]="value === 'O'"><span class="icons iconCheck" *ngIf="value === 'O'"></span></div>
+        <p class="text" [innerHtml]="label" [ngClass]="{'errorInfos checkBox': hasErr}"></p>
+      </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'image'">
+      <div class="imageMode" [class.active]="value === 'O'">
+        <div class="imageContainer">
+          <div class="img {{formatWebp ? 'webp' : 'png'}} {{id}}"></div>
+        </div>
+        <div class="textContainer">
+          <div class="infos">
+            <div class="title">{{label}}</div>
+            <div class="text" *ngIf="imageText" [innerHTML]="imageText"></div>
+          </div>
+          <div class="check alignCenterXY" [class.active]="value === 'O'"><span class="icons iconCheck" *ngIf="value === 'O'"></span></div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'prix'">
+      <div class="priceMode {{id}}">
+        <div class="check alignCenterXY" [class.active]="value === 'O'"><span class="icons iconCheck" *ngIf="value === 'O'"></span></div>
+        <p class="text" [innerHtml]="label" [ngClass]="{'errorInfos checkBox': hasErr}"></p>
+        <div class="prix">{{prix}}</div>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>

@@ -1,0 +1,16 @@
+<div id="smartHouse">
+  <div class="mainHeader" *ngIf="!hideContent">
+    <app-smart-house-header></app-smart-house-header>
+  </div>
+  <div class="mainContainer">
+    <div class="mainSidebar" *ngIf="!hideContent">
+      <app-sidebar [active]="activeRoute"></app-sidebar>
+    </div>
+    <div class="mainContent">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <app-popup></app-popup>
+  <app-slider></app-slider>
+  <app-cards *ngIf="showCards"></app-cards>
+</div>

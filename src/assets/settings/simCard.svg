@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="164.205" height="143.705" viewBox="0 0 164.205 143.705">
+  <defs>
+    <path id="path-1" fill-rule="evenodd" d="M5 0h150c2.75957512 0 5 2.24042488 5 5v130c0 2.75957512-2.24042488 5-5 5H5c-2.75957512 0-5-2.24042488-5-5V5c0-2.75957512 2.24042488-5 5-5z"/>
+    <linearGradient id="linearGradient-2" x1="80" x2="80" y1="0" y2="77" gradientUnits="userSpaceOnUse">
+      <stop offset=".27" stop-color="rgb(199,149,54)"/>
+      <stop offset="1" stop-color="rgb(200,150,55)" stop-opacity=".62"/>
+    </linearGradient>
+    <mask id="mask-3" x="-2.352" y="-1.852" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="164.205" height="143.705" x="-2.352" y="-1.852" fill="black"/>
+      <use fill="white" xlink:href="#path-1"/>
+    </mask>
+    <path id="path-7" fill-rule="evenodd" d="M110 35h50v70h-50c-5.51915024 0-10-4.48084976-10-10V45c0-5.51915024 4.48084976-10 10-10z"/>
+    <mask id="mask-8" x="-2.352" y="-1.852" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="164.205" height="143.705" x="-2.352" y="-1.852" fill="black"/>
+      <use fill="white" xlink:href="#path-7"/>
+    </mask>
+    <path id="path-10" fill-rule="evenodd" d="M0 35h50c5.51915024 0 10 4.48084976 10 10v50c0 5.51915024-4.48084976 10-10 10H0V35z"/>
+    <mask id="mask-11" x="-2.352" y="-1.852" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="164.205" height="143.705" x="-2.352" y="-1.852" fill="black"/>
+      <use fill="white" xlink:href="#path-10"/>
+    </mask>
+  </defs>
+  <g transform="translate(2.35231505 1.85231505)">
+    <g>
+      <use fill="url(#linearGradient-2)" xlink:href="#path-1"/>
+      <use fill-opacity="0" stroke="rgb(0,0,0)" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="2" mask="url(#mask-3)" xlink:href="#path-1"/>
+    </g>
+    <path fill="none" stroke="rgb(0,0,0)" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="1" d="M0 70h59.5"/>
+    <rect width="40" height="40" x="60" y="59" fill="none"/>
+    <path fill="none" stroke="rgb(0,0,0)" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="1" d="M60 54h40.5"/>
+    <use fill-opacity="0" stroke="rgb(4,4,4)" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" mask="url(#mask-8)" xlink:href="#path-7"/>
+    <path fill="none" stroke="rgb(0,0,0)" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="1" d="M100 70h59.5"/>
+    <use fill-opacity="0" stroke="rgb(0,0,0)" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="2" mask="url(#mask-11)" xlink:href="#path-10"/>
+    <path fill="none" stroke="rgb(0,0,0)" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="1" d="M60 89h40.5"/>
+    <path fill="none" stroke="rgb(0,0,0)" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="1" d="M40.5 36V1"/>
+    <path fill="none" stroke="rgb(0,0,0)" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="1" d="M40.5 139.5v-35"/>
+    <path fill="none" stroke="rgb(0,0,0)" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="1" d="M119.5 104.5v35"/>
+    <path fill="none" stroke="rgb(0,0,0)" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="1" d="M119.5.5v35"/>
+  </g>
+</svg>

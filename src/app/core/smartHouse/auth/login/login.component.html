@@ -1,0 +1,37 @@
+<div id="login">
+  <div class="loginLleft">
+    <div class="logo"><b>Smart</b>Home</div>
+    <div class="loginText">
+      <p>Control your home</p>
+      <p>Connect your life</p>
+    </div>
+  </div>
+  <div class="loginRight">
+    <div class="loginRightContent">
+      <div class="row2">Sign in</div>
+      <div class="formContainer">
+        <form [formGroup]="loginForm">
+          <div class="inputContainer">
+            <label class="inputLabel" for="email">Email</label>
+            <input class="inputHandler" type="text" id="email" formControlName="email" placeholder="example@email.com">
+          </div>
+          <div class="inputContainer">
+            <label class="inputLabel" for="password">Password</label>
+            <input class="inputHandler" type="password" id="password" formControlName="password" placeholder="123456">
+          </div>
+          <div class="error">{{errMessage}}</div>
+          <app-spinner *ngIf="isPending"></app-spinner>
+          <button type="submit" class="submit" [disabled]="!loginForm.valid" (click)="submitLogin()">Sign in</button>
+        </form>
+      </div>
+      <div class="forgot">
+        <span>Forgot your password?</span>
+        <span class="reset">Reset</span>
+      </div>
+      <div class="signupAccount">
+        <span>Don't have an account?</span>
+        <span class="signLink" [routerLink]="['/smarthouse/signup']">Sign up</span>
+      </div>
+    </div>
+  </div>
+</div>

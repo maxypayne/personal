@@ -1,0 +1,14 @@
+#auth {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../../../assets/auth.svg");
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  .authCotnaier {
+    width: 500px;
+    height: 500px;
+    //background: #30BE76;
+    //background: #F8B449;
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.44) 0%, #FFFFFF 95%);
+  }
+}
