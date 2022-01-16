@@ -1,0 +1,13 @@
+#website__home {
+  display: flex;
+  .website__home--content {
+    width: 100%;
+    background: #1e1e28;
+    //height: 100vh;
+  }
+  .website__home--menu {
+    width: 80px;
+    background: #20202a;
+    height: 100vh;
+  }
+}
