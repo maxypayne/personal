@@ -1,0 +1,69 @@
+<div id="sidebar">
+  <section class="top__container">
+    <div class="top__container--image__container">
+      <img class="top__container--image" src="" alt="">
+      <img class="top__container--pulse" src="" alt="">
+    </div>
+    <p class="top__container--name">Maxim Lucov</p>
+    <p class="top__container--text">Front-end Deweloper</p>
+    <p class="top__container--text">Ui/UX Designer</p>
+  </section>
+  <section class="infos__container">
+    <div class="residence__container box">
+      <div class="box__title">Residence</div>
+      <p class="residence__row">
+        <span class="residence__row--label">Residence :</span>
+        <span class="residence__row--value">France</span>
+      </p>
+      <p class="residence__row">
+        <span class="residence__row--label">Location :</span>
+        <span class="residence__row--value">Paris</span>
+      </p>
+      <p class="residence__row">
+        <span class="residence__row--label">Age :</span>
+        <span class="residence__row--value">33</span>
+      </p>
+    </div>
+    <div class="languages__container box">
+      <p class="box__title">Languages</p>
+      <div class="language__row" *ngFor="let language of languages">
+        <div class="language__row--description">
+          <p class="language__row--label">{{language.label}}</p>
+          <p class="language__row--value">{{language.percentage}}%</p>
+        </div>
+        <div class="language__row--under">
+          <div class="language__row__average__up" [style.width.%]="language.percentage"></div>
+        </div>
+      </div>
+    </div>
+    <div class="skills__container box">
+      <p class="box__title">Coding</p>
+      <div class="skill__row" *ngFor="let skill of skills">
+        <div class="skill__row--description">
+          <p class="skill__row--label">{{skill.label}}</p>
+          <p class="skill__row--value">{{skill.percentage}}%</p>
+        </div>
+        <div class="skill__average--under">
+          <div class="skill__average__up" [style.width.%]="skill.percentage"></div>
+        </div>
+      </div>
+    </div>
+    <div class="knowledge__container box">
+      <p class="box__title">Knowledge</p>
+      <p class="knowledge__row"><span class="icons iconCheck"></span><span>Bootstrap, Materialize</span></p>
+      <p class="knowledge__row"><span class="icons iconCheck"></span><span>Stylus, Sass, Scss</span></p>
+      <p class="knowledge__row"><span class="icons iconCheck"></span><span>Gulp, Webpack, Grunt</span></p>
+      <p class="knowledge__row"><span class="icons iconCheck"></span><span>Git, Github</span></p>
+    </div>
+    <div class="cv__container box">
+      <p class="cv__download">DOWNLOAD CV <span class="icons iconDownlaod"></span></p>
+    </div>
+  </section>
+  <section class="links__container">
+    <p *ngFor="let item of links">
+      <a href="{{item.link}}" target="_blank">
+        <span class="icons {{item.icon}}"></span>
+      </a>
+    </p>
+  </section>
+</div>

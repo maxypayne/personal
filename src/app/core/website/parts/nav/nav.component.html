@@ -1,0 +1,11 @@
+<div id="nav" [class.isOpen]="isOpen">
+  <div class="nav__menu">
+    <span class="icons {{isOpen ? 'iconClose' : 'iconMenu'}}" (click)="toogleMenu()"></span>
+  </div>
+  <div class="nav__content">
+    <p class="content__choice" [class.hide]="isOpen">{{active}}</p>
+    <ul class="menu" [class.open]="isOpen">
+      <li class="menu__link" *ngFor="let link of menu" (click)="redirect(link.id)">{{link.text}}</li>
+    </ul>
+  </div>
+</div>

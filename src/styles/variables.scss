@@ -109,6 +109,10 @@ $font: 'Source Sans Pro', sans-serif;
   &.iconHtml:before {content: "\eae8"}
   &.iconCss:before {content: "\eae9"}
   &.iconGit:before {content: "\eaea"}
+  &.iconFacebook:before {content: "\ea90"}
+  &.iconWhatsapp:before {content: "\ea93"}
+  &.iconTwitter:before {content: "\ea96"}
+  &.iconLinkedin:before {content: "\eaca"}
 }
 // COLOR
 $white: #FFFFFF;
