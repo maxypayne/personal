@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { AppService } from "../../../../app.service";
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.scss']
+  styleUrls: ['./nav.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class NavComponent implements OnInit {
   isOpen: boolean;
@@ -12,15 +14,16 @@ export class NavComponent implements OnInit {
     { id: 'home', text: 'PORTFOLIO' },
     { id: 'home', text: 'HISTORY' },
     { id: 'home', text: 'BLOG' },
-    { id: 'home', text: 'ONEPAGE' },
+    { id: 'contact', text: 'CONTACT' },
   ];
   active = 'HOME';
-  constructor() { }
+  constructor(private app: AppService) { }
   ngOnInit(): void {}
   toogleMenu() {
     this.isOpen = !this.isOpen;
   }
   redirect(id) {
     this.active = id;
+    this.app.goTo(`/website/${id}`);
   }
 }

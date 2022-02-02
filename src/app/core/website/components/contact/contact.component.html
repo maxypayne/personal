@@ -16,6 +16,7 @@
       <app-inp class="mt12" [inpAttr]="{id: 'email', cssClass: 'contact'}" (changeVal)="handleChange($event)"></app-inp>
       <app-textarea class="mt12" [areaAttr]="{ id: 'message', cssClass: 'dark' }" (changeVal)="handleChange($event)"></app-textarea>
       <div class="submit" (click)="sendMessage()">Submit</div>
+      <div class="error" *ngIf="error">{{error}}</div>
     </div>
   </div>
 </div>

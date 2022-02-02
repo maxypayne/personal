@@ -10,7 +10,6 @@ const routes: Routes = [
   { path: 'social',  loadChildren: () => import('./core/social/social.module').then(m => m.SocialModule) },
   { path: 'noren',  loadChildren: () => import('./core/noren/noren.module').then(m => m.NorenModule) },
   { path: 'smarthouse',  loadChildren: () => import('./core/smartHouse/smartHouse.module').then(m => m.SmartHouseModule) },
-  { path: 'portfolio',  loadChildren: () => import('./core/portfolio/portfolio.module').then(m => m.PortfolioModule) },
   { path: 'shop',  loadChildren: () => import('./core/shop/shop.module').then(m => m.ShopModule) },
   { path: 'website',  loadChildren: () => import('./core/website/website.module').then(m => m.WebsiteModule) }
   ];

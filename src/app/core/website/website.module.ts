@@ -7,11 +7,12 @@ import { InputsModule } from "../../tools/inputs/inputs.module";
 import { WebsiteHomeComponent} from './components/home/home.component';
 import {SidebarModule} from "./parts/sidebar/sidebar.module";
 import {NavModule} from "./parts/nav/nav.module";
-import {MainModule} from "./parts/main/main.module";
+import { WebsiteContactComponent } from './components/contact/contact.component';
 
 const routes: Routes = [
   { path: '', component: WebsiteComponent, children: [
       { path: 'home', component: WebsiteHomeComponent },
+      { path: 'contact', component: WebsiteContactComponent },
       // { path: 'contact', component: PortfolioContactComponent },
       { path: '**', redirectTo: 'home' }
     ],
@@ -21,6 +22,7 @@ const routes: Routes = [
   declarations: [
     WebsiteComponent,
     WebsiteHomeComponent,
+    WebsiteContactComponent,
   ],
   imports: [
     [RouterModule.forChild(routes)],
@@ -29,7 +31,6 @@ const routes: Routes = [
     InputsModule,
     SidebarModule,
     NavModule,
-    MainModule,
   ],
   exports: [
     WebsiteComponent,

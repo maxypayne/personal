@@ -1,7 +1,50 @@
 <div id="website__home">
-  <app-website-sidebar></app-website-sidebar>
-  <main class="website__home--content">
-    <app-main></app-main>
-  </main>
-  <app-nav></app-nav>
+  <div class="home__top">
+      <div class="home__top_box">
+        <div class="home__infos">
+          <div class="home__infos__box">
+            <div class="info">Everything plugin do, can be done without using it!</div>
+            <div class="art-lg-text art-code mb-25">
+              <!--            I build <span class="txt-rotate" data-period="2000" data-rotate="[ &quot;web interfaces.&quot;,&quot;ios and android applications.&quot;,&quot;design mockups.&quot;,&quot;automation tools.&quot; ]"><span class="wrap">des</span></span> &lt;/<i>code</i>&gt;</div>-->
+              <code><i><</i><span>code</span><i>></i> A text which has to be dynamic <i><</i><span>code</span><i>></i></code>
+              <div class="cta__container mt30">
+                <div class="cta">Discover</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="home__content">
+      <!--    list experiences-->
+      <section class="experiences">
+
+      </section>
+      <section  class="services">
+        <div class="services__title">My services</div>
+        <div class="services__cards">
+          <div class="services__card" *ngFor="let card of cards">
+            <p class="card__title">{{card.title}}</p>
+            <p class="card__description">{{card.description}}</p>
+<!--            <div class="cta" (click)="handleLearn(card.id)">Learn about</div>-->
+          </div>
+        </div>
+      </section>
+      <section class="prices">
+        <div class="prices__title">Price plan</div>
+        <div class="prices__cards">
+          <div class="prices__card" *ngFor="let card of prices">
+            <p class="card__title">{{card.title}}</p>
+            <p class="card--option" *ngFor="let option of card.options"><span class="icons iconCheck"></span>{{option}}</p>
+<!--            <div class="cta" (click)="handleLearn(card.id)">Learn about</div>-->
+          </div>
+        </div>
+      </section>
+      <section class="recommendations">
+        <div class="recommendations__title">Recommendations</div>
+        <div class="recommendations__cards">
+          <div class="recommendations__card" *ngFor="let rec of recommendations"></div>
+        </div>
+      </section>
+    </div>
 </div>

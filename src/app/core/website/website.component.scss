@@ -1,9 +1,10 @@
 @import "styles/styles";
 #website {
-  background-color: $background;
-  padding: 15px;
-  width: 100%;
-  font-family: 'Poppins', sans-serif;
   display: flex;
-  //min-height: 100vh;
+  background-color: $background;
+  font-family: 'Poppins', sans-serif;
+  .website__content {
+    //padding: 30px;
+    //width: 100%;
+  }
 }
