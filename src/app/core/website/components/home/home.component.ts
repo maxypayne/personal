@@ -23,10 +23,10 @@ export class WebsiteHomeComponent implements OnInit {
   recommendations = [
     {id: '8jdsa6', name: 'Camelia Hugens', date:'04/07/2021', img: 'https://bslthemes.site/arter/wp-content/uploads/2020/09/testimonial-1-140x140.jpg'},
     {id: 'oynv75', name: 'Martine Moore', date:'28/04/2020', img: 'https://bslthemes.site/arter/wp-content/uploads/2020/09/testimonial-2-140x140.jpg'},
-    {id: 'dsa425', name: 'John Doe', date:'01/12/2021', img: 'https://bslthemes.site/arter/wp-content/uploads/2020/09/testimonial-3-140x140.jpg'},
-    {id: 'dsa425', name: 'John Doe', date:'01/12/2021', img: 'https://bslthemes.site/arter/wp-content/uploads/2020/09/testimonial-3-140x140.jpg'},
-    {id: 'dsa425', name: 'John Doe', date:'01/12/2021', img: 'https://bslthemes.site/arter/wp-content/uploads/2020/09/testimonial-3-140x140.jpg'},
-    {id: 'ha6ch', name: 'Gordel Hulio', date:'25/02/2021', img: 'https://bslthemes.site/arter/wp-content/uploads/2020/09/testimonial-4-140x140.jpg'},
+    // {id: 'dsa425', name: 'John Doe', date:'01/12/2021', img: 'https://bslthemes.site/arter/wp-content/uploads/2020/09/testimonial-3-140x140.jpg'},
+    // {id: 'dsa425', name: 'John Doe', date:'01/12/2021', img: 'https://bslthemes.site/arter/wp-content/uploads/2020/09/testimonial-3-140x140.jpg'},
+    // {id: 'dsa425', name: 'John Doe', date:'01/12/2021', img: 'https://bslthemes.site/arter/wp-content/uploads/2020/09/testimonial-3-140x140.jpg'},
+    // {id: 'ha6ch', name: 'Gordel Hulio', date:'25/02/2021', img: 'https://bslthemes.site/arter/wp-content/uploads/2020/09/testimonial-4-140x140.jpg'},
   ]
   constructor() { }
   ngOnInit(): void {
