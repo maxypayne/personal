@@ -1,0 +1,18 @@
+<div id="rxjstuto">
+  <div #myDiv>Click to tdiv</div>
+  <div>{{ test1 | async }}</div>
+  <div *ngIf="test1 | async as obj">
+    <p>{{obj.name}}</p>
+  </div>
+  <div>{{ test2 | async }}</div>
+  <button class="cta" (click)="start()">Start</button>
+  <button class="cta" (click)="stop()">Stop</button>
+  <button class="cta" (click)="operators()">operators</button>
+  <button class="cta" (click)="getTodos()">Get todos</button>
+  <button appColor class="cta" (click)="testObs()">Test</button>
+  <p>{{'DSI' | fileSize: 'tuto, fras'}}</p>
+  <nav>
+    <a routerLink="/todosList" routerLinkActive="active">List of todos</a>
+    <a routerLink="/completed" routerLinkActive="active">Completed todos</a>
+  </nav>
+</div>
