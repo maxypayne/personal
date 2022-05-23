@@ -19,22 +19,24 @@
     }
   }
   textarea {
+    background-color: transparent;
     width: 100%;
-    border: 1px solid $greyE1;
+    border: 1px solid $grey81;
     resize: none;
     padding: 10px;
     height: 120px;
     border-radius: 5px;
     box-sizing: border-box;
+    color: white;
     &::placeholder {
-      color: white;
+      color: $grey57;
     }
     &.active {
-      border: 1px solid $blue19;
+      border: 1px solid white;
     }
     &:focus {
-      border-color: transparent;
-      color: white;
+      //border-color: transparent;
+      //color: white;
     }
   }
 }

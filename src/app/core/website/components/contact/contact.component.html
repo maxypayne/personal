@@ -1,0 +1,15 @@
+<div id="contact">
+  <div class="adresse">
+    <p>OFFICE IN PARIS</p>
+    <p><span class="label">Rue : </span> <span class="value">200 rue saint martin</span></p>
+    <p><span class="label">Phone : </span> <span class="value">06 11 22 33 44</span></p>
+    <p><span class="label">Email : </span> <span class="value">info@exemple.com</span></p>
+  </div>
+  <div class="contactContainer">
+    <app-inp [inpAttr]="{id: 'name', cssClass: 'contact'}" (changeVal)="handleChange($event)"></app-inp>
+    <app-inp class="mt12" [inpAttr]="{id: 'email', cssClass: 'contact'}" (changeVal)="handleChange($event)"></app-inp>
+    <app-textarea class="mt12" [areaAttr]="{ id: 'message', cssClass: 'dark' }" (changeVal)="handleChange($event)"></app-textarea>
+    <div class="submit" (click)="sendMessage()">Submit</div>
+    <div class="error" *ngIf="error">{{error}}</div>
+  </div>
+</div>

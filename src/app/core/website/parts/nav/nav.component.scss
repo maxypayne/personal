@@ -17,9 +17,10 @@
     background: linear-gradient(
         159deg, rgba(37, 37, 50, 0.98) 0%, rgba(35, 35, 45, 0.98) 100%);
     box-shadow: 0 1px 4px 0 rgb(15 15 20 / 10%);
-    .icons {
+    .iconMenu {
       padding: 5px;
       cursor: pointer;
+      color: white;
     }
   }
   .nav__content {
@@ -41,6 +42,7 @@
     .menu {
       transition: opacity ease-in .5s;
       opacity: 0;
+      overflow: hidden;
       .menu__link {
         color: #8c8c8e;
         text-transform: uppercase;

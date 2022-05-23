@@ -9,9 +9,9 @@
   }
   .inputContainer {
     position: relative;
-    border: 1px solid $greyE1;
+    border: 1px solid $grey81;
     border-radius: 5px;
-    background-color: $greyF5;
+    //background-color: $greyF5;
     &.hasErr {
       border-color: $red;
     }
@@ -36,14 +36,14 @@
       display: flex;
       padding: 0 10px;
       align-items: center;
-      background-color: $greyF5;
+      //background-color: $greyF5;
       border-radius: 5px;
-      &.toggleBackground {
-        background-color: white;
-        .elemInp {
-          background-color: white;
-        }
-      }
+      //&.toggleBackground {
+      //  background-color: white;
+      //  .elemInp {
+      //    background-color: white;
+      //  }
+      //}
       &.noRadius {
         border-radius: 0 !important;
         .elemInp {
@@ -69,9 +69,9 @@
       .elemInp {
         width: 100%;
         height: 100%;
-        color: black;
+        color: white;
         border-radius: 5px;
-        background-color: $greyF5;
+        //background-color: $greyF5;
         &::placeholder {
           color: $grey57;
         }

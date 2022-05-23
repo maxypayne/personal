@@ -20,15 +20,21 @@ export default {
   },
   email: {
     type: 'login',
-    description: 'Email',
+    placeholder: 'Email',
     length: 50,
     errorMessage: 'Merci d’indiquer votre email pour le suivi de la commande.',
   },
-  mdp: {
+  password: {
     type: 'mdp',
-    description: 'Entrez votre mot de passe',
+    placeholder: 'Entrez votre mot de passe',
     length: 30,
     errorMessage: 'Merci d\'indiquer votre mot de passe',
+  },
+  name: {
+    type: 'textAz_firstMaj',
+    placeholder: 'Nom',
+    length: 40,
+    errorMessage: 'Merci d’indiquer votre nom.',
   },
   nom: {
     type: 'textAz_firstMaj',

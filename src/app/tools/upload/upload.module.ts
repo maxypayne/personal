@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MainComponent } from './main.component';
+import { UploadComponent } from './upload.component';
 
 
 
 @NgModule({
   declarations: [
-    MainComponent
+    UploadComponent
   ],
   exports: [
-    MainComponent
+    UploadComponent
   ],
   imports: [
     CommonModule
   ]
 })
-export class MainModule { }
+export class UploadModule { }
