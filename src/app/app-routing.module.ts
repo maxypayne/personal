@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'shop',  loadChildren: () => import('./core/shop/shop.module').then(m => m.ShopModule) },
   { path: 'rxjstuto',  loadChildren: () => import('./core/rxjstuto/rxjstuto.module').then(m => m.RxjstutoModule) },
   { path: 'website',  loadChildren: () => import('./core/website/website.module').then(m => m.WebsiteModule) }
-  ];
+];
 
 @NgModule({
   imports: [
