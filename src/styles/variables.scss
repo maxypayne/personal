@@ -1,25 +1,14 @@
 // MEDIA
+$background: #191923;
+$orangeff: #ffc107;
+$grey8c: #8c8c8e;
+$grey81: #818BA5;
 
 @mixin media($type, $orientation) {
   $XlargeMin: 1500px;
   $largeMin: 1025px;
   $smallMin: 0;
-
-  @if $type == Xlarge {
-    @media only screen and (min-width: $XlargeMin) {
-      @content;
-    }
-  } @else if $type == large {
-    @if $orientation == both {
-      @media only screen and (min-width: $largeMin) and (max-width: $XlargeMin - 1) {
-        @content;
-      }
-    } @else {
-      @media only screen and (min-width: $largeMin) and (max-width: $XlargeMin - 1) and (orientation: $orientation) {
-        @content;
-      }
-    }
-  } @else if $type == desktop {
+  @if $type == desktop {
     @media only screen and (min-width: $largeMin) {
       @content;
     }

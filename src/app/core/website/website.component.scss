@@ -1,83 +1,132 @@
-@import "styles/styles";
+@import "../../../styles/variables";
+
 #website {
-  display: flex;
   background-color: $background;
   font-family: 'Poppins', sans-serif;
-  .website__content {
-    padding: 30px;
-    width: 100%;
-    .home__top {
-      //width: 100%;
-      height: 400px;
-      background-image: url("../../../assets/website/bg.jpeg");
-      background-size: cover;
-      background-position: bottom;
-      .home__top_box {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+  @include media(desktop, both) {
+    display: flex;
+    .website__content {
+      padding: 30px;
+      width: 100%;
+      .home__top {
         //width: 100%;
         height: 400px;
-        //background-color: ;
-        //background: linear-gradient(#2b2c35, #1e1e28);
-        background-image: linear-gradient(rgba(43, 44, 53, .8), rgba(30, 30, 40) 100%);
-        .home__infos {
-          width: 100%;
-          height: 300px;
-          margin: 0 30px;
-          background-color: #8c8c8e;
-          background-image: url("../../../assets/website/bg.jpeg");
-          background-size: cover;
-          background-position: center;
-          .home__infos__box {
+        background-image: url("../../../assets/website/bg.jpeg");
+        background-size: cover;
+        background-position: bottom;
+        .home__top_box {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          //width: 100%;
+          height: 400px;
+          //background-color: ;
+          //background: linear-gradient(#2b2c35, #1e1e28);
+          background-image: linear-gradient(rgba(43, 44, 53, .8), rgba(30, 30, 40) 100%);
+          .home__infos {
             width: 100%;
-            height: 100%;
-            padding: 60px;
-            background-image: linear-gradient(90deg,rgba(45,45,58,.9) 15%,rgba(45,45,58,.7) 50%,rgba(43,43,53,.7) 100%);
-            .info {
-              font-size: 36px;
-              color: white;
-              font-weight: 800;
+            height: 300px;
+            margin: 0 30px;
+            background-color: #8c8c8e;
+            background-image: url("../../../assets/website/bg.jpeg");
+            background-size: cover;
+            background-position: center;
+            .home__infos__box {
+              width: 100%;
+              height: 100%;
+              padding: 60px;
+              background-image: linear-gradient(90deg,rgba(45,45,58,.9) 15%,rgba(45,45,58,.7) 50%,rgba(43,43,53,.7) 100%);
+              .info {
+                font-size: 36px;
+                color: white;
+                font-weight: 800;
+              }
+              code {
+                color: white;
+                font-size: 16px;
+              }
+              span {
+                color: $orangeff;
+              }
             }
-            code {
-              color: white;
-              font-size: 16px;
+          }
+        }
+      }
+      .home__content {
+        padding: 0 30px;
+        .services {
+          padding-top: 30px;
+          .services__title {
+            font-weight: 600;
+            color: white;
+            font-size: 20px;
+            margin-bottom: 20px;
+          }
+          .ability {
+            color: $grey81;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            .circle {
+              width: 6px;
+              height: 6px;
+              background-color: $grey81;
+              border-radius: 50%;
+              margin-right: 10px;
             }
-            span {
-              color: $orangeff;
-            }
+          }
+        }
+        .projects {
+          color: white;
+          .link {
+            color: #2763d5;
           }
         }
       }
     }
-    .home__content {
-      padding: 0 30px;
-      .services {
-        padding-top: 30px;
-        .services__title {
-          font-weight: 600;
-          color: white;
-          font-size: 20px;
-          margin-bottom: 20px;
-        }
-        .ability {
-          color: $grey81;
-          display: flex;
-          align-items: center;
-          margin-bottom: 10px;
-          .circle {
-            width: 6px;
-            height: 6px;
-            background-color: $grey81;
-            border-radius: 50%;
-            margin-right: 10px;
+  }
+  @include media(mobile, both) {
+    .website__content {
+      padding: 30px;
+      width: 100%;
+      .home__top {
+        display: none;
+      }
+      .home__content {
+        .services {
+          .services__title {
+            font-weight: 600;
+            color: white;
+            font-size: 20px;
+            margin-bottom: 20px;
+          }
+          .ability {
+            color: $grey81;
+            display: flex;
+            margin-bottom: 15px;
+            .circle {
+              margin-top: 6px;
+              flex-shrink: 0;
+              width: 6px;
+              height: 6px;
+              background-color: $grey81;
+              border-radius: 50%;
+              margin-right: 10px;
+            }
           }
         }
-      }
-      .projects {
-        color: white;
-        .link {
-          color: #2763d5;
+        .projects {
+          margin-top: 30px;
+          color: white;
+          .projects__title {
+            font-weight: 600;
+            color: white;
+            font-size: 20px;
+            margin-bottom: 20px;
+          }
+          .link {
+            color: #2763d5;
+          }
         }
       }
     }
