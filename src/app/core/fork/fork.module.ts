@@ -1,12 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-
+import { ForkRoutingModule } from "./fork-routing.module";
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [ForkRoutingModule],
 })
-export class ForkModule { }
+
+export class ForkModule {}
