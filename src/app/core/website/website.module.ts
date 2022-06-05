@@ -11,16 +11,7 @@ import { WebsiteContactComponent } from './components/contact/contact.component'
 import { WebsitePartsComponent } from './components/parts/parts.component';
 import { UploadModule } from "../../tools/upload/upload.module";
 
-const routes: Routes = [
-  { path: '', component: WebsiteComponent, children: [
-      { path: 'home', component: WebsiteHomeComponent },
-      { path: 'contact', component: WebsiteContactComponent },
-      { path: 'parts', component: WebsitePartsComponent },
-      // { path: 'contact', component: PortfolioContactComponent },
-      { path: '**', redirectTo: 'home' }
-    ],
-  },
-];
+const routes: Routes = [ { path: '', component: WebsiteComponent }];
 @NgModule({
   declarations: [
     WebsiteComponent,
