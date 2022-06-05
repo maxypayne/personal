@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { AppService } from './app.service';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,10 @@ import { AppService } from './app.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'frontEndMentor';
   isResize: any;
-  constructor(private app: AppService) {}
+  constructor(private app: AppService, private title: Title, private meta: Meta) {
+    this.title.setTitle('Maxim Lucov : Développeur Web');
+  }
   ngOnInit(): void {
     this.getWidth();
   }
