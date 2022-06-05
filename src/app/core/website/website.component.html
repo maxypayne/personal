@@ -1,6 +1,35 @@
 <div id="website">
   <app-website-sidebar></app-website-sidebar>
   <div class="website__content">
-    <router-outlet></router-outlet>
+    <div id="website__home">
+      <div class="home__top">
+        <div class="home__top_box">
+          <div class="home__infos">
+            <div class="home__infos__box">
+              <div class="info">Everything a plugin does, can be done without using it!</div>
+              <div class="art-lg-text art-code mb-25">
+                <!--            I build <span class="txt-rotate" data-period="2000" data-rotate="[ &quot;web interfaces.&quot;,&quot;ios and android applications.&quot;,&quot;design mockups.&quot;,&quot;automation tools.&quot; ]"><span class="wrap">des</span></span> &lt;/<i>code</i>&gt;</div>-->
+                <code><i><</i><span>code</span><i>></i> A text which has to be dynamic <i><</i><span>code</span><i>></i></code>
+                <div class="cta__container mt30">
+                  <div class="cta">Discover</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="home__content">
+        <section class="experiences">
+        </section>
+        <section  class="services">
+          <div class="services__title">Que puis-je faire</div>
+          <p class="ability" *ngFor="let ability of abilities"><span class="circle"></span>{{ability}}</p>
+        </section>
+        <section class="projects">
+          <div class="services__title">Projets</div>
+          <a class="link" href="https://app.eplaque.fr" target="_blank">Eplaque.fr</a>
+        </section>
+      </div>
+    </div>
   </div>
 </div>
