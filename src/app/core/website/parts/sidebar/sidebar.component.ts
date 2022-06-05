@@ -8,16 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class WebsiteSidebarComponent implements OnInit {
   skills = [
     {label: 'HTML', percentage: 95},
-    {label: 'CSS', percentage: 90},
+    {label: 'CSS', percentage: 95},
     {label: 'JS', percentage: 85},
-    {label: 'Angular', percentage: 70},
+    {label: 'Angular', percentage: 85},
+    {label: 'React', percentage: 70},
     {label: 'MongoDB', percentage: 30},
   ];
   languages = [
-    {label: 'Engish', percentage: 60},
-    {label: 'French', percentage: 80},
-    {label: 'Russsian', percentage: 80},
-    {label: 'Roumanian', percentage: 100},
+    {label: 'Roumain', percentage: 100},
+    {label: 'Russe', percentage: 90},
+    {label: 'Français', percentage: 90},
+    {label: 'Anglais', percentage: 70},
   ];
   links = [
     { icon: 'iconFacebook', link: 'www.facebook.com' },

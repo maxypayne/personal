@@ -13,8 +13,9 @@ const routes: Routes = [
   { path: 'smarthouse',  loadChildren: () => import('./core/smartHouse/smartHouse.module').then(m => m.SmartHouseModule) },
   { path: 'shop',  loadChildren: () => import('./core/shop/shop.module').then(m => m.ShopModule) },
   { path: 'rxjstuto',  loadChildren: () => import('./core/rxjstuto/rxjstuto.module').then(m => m.RxjstutoModule) },
-  { path: 'website',  loadChildren: () => import('./core/website/website.module').then(m => m.WebsiteModule) }
-  ];
+  { path: 'website',  loadChildren: () => import('./core/website/website.module').then(m => m.WebsiteModule) },
+  { path: 'fork-clone',  loadChildren: () => import('./core/fork/fork.module').then(m => m.ForkModule) }
+];
 
 @NgModule({
   imports: [

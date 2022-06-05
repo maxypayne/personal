@@ -1,0 +1,31 @@
+@import "../../../../styles/variables";
+#fork-home {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .content {
+    max-width: 1000px;
+    display: flex;
+  }
+  section {
+    width: 100vw;
+    padding: 30px;
+    background-color: #f2f6f4;
+    .section-left {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .search-container {
+        width: 450px;
+      }
+    }
+    .section-right {
+      img {
+        width: 100%;
+      }
+      width: 50%;
+    }
+  }
+}

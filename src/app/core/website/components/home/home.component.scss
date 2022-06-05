@@ -47,115 +47,32 @@
   .home__content {
       padding: 0 30px;
       .services {
+        padding-top: 30px;
         .services__title {
           font-weight: 600;
           color: white;
           font-size: 20px;
           margin-bottom: 20px;
         }
-        .services__cards {
+        .ability {
+          color: $grey81;
           display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          .services__card {
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            margin-bottom: 5%;
-            font-size: 14px;
-            width: 30%;
-            background-color: #2c2c39;
-            padding: 30px;
-            .card__title {
-              color: white;
-              margin-bottom: 30px;
-            }
-            .card__description {
-              color: $grey8c;
-              text-align: center;
-              margin-bottom: 15px;
-            }
-            .cta {
-              margin-top: 30px;
-            }
+          align-items: center;
+          margin-bottom: 10px;
+          .circle {
+            width: 6px;
+            height: 6px;
+            background-color: $grey81;
+            border-radius: 50%;
+            margin-right: 10px;
           }
         }
       }
-      .prices {
-        padding-bottom: 50px;
-        .prices__title {
-          font-weight: 600;
-          color: white;
-          font-size: 20px;
-          margin-bottom: 20px;
-        }
-        .prices__cards {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          .prices__card {
-            border-radius: 10px;
-            width: 30%;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            background-color: #2c2c39;
-            padding: 30px;
-            .card__title {
-              color: $orangeff;
-              font-size: 36px;
-              font-weight: 600;
-              text-align: center;
-              margin-bottom: 30px;
-            }
-            .card--option {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              margin-bottom: 10px;
-              font-size: 13px;
-              color: $grey8c;
-              .iconCheck {
-                color: $orangeff;
-                font-size: 12px;
-                margin-right: 5px;
-              }
-            }
-            .cta {
-              margin-top: 30px;
-            }
-            &:hover {
-              box-shadow: #2c2c39 0 20px 30px -10px;
-            }
-          }
+      .projects {
+        color: white;
+        .link {
+          color: #2763d5;
         }
       }
-      .recommendations {
-        overflow: hidden;
-        width: 60vw;
-        .recommendations__title {
-          font-weight: 600;
-          color: white;
-          font-size: 20px;
-          margin-bottom: 20px;
-        }
-        .recommendations__cards {
-          display: flex;
-          width: 100%;
-          overflow: hidden;
-          .recommendations__card {
-            flex-shrink: 0;
-            width: 300px;
-            height: 250px;
-            padding: 20px;
-            position: relative;
-            background-color: #2c2c39;
-            &:not(:last-child) {
-              margin-right: 20px;
-            }
-          }
-        }
-      }
-    }
+  }
 }
