@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../../app.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Job } from "../../tools/interfaces/job";
 
 @Component({
@@ -11,12 +11,12 @@ import { Job } from "../../tools/interfaces/job";
 export class JobsComponent implements OnInit {
   jobs: Array<Job>;
   initialJobs: Array<Job>;
-  form: FormGroup;
+  form: UntypedFormGroup;
   constructor(private app: AppService) { }
   ngOnInit() {
     this.getJobs();
-    this.form = new FormGroup({
-      filter: new FormControl(null, Validators.required),
+    this.form = new UntypedFormGroup({
+      filter: new UntypedFormControl(null, Validators.required),
     });
   }
   getJobs() {

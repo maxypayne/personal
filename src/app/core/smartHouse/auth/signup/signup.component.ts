@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { AppService } from '../../../../app.service';
 import { delay } from 'rxjs/operators';
 
@@ -9,7 +9,7 @@ import { delay } from 'rxjs/operators';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-  signupForm: FormGroup;
+  signupForm: UntypedFormGroup;
   errMessage: string;
   isPendingUsername: boolean;
   isPendingEmail: boolean;
@@ -19,11 +19,11 @@ export class SignupComponent implements OnInit {
   get controls() { return this.signupForm.controls; }
 
   ngOnInit() {
-    this.signupForm = new FormGroup({
-      username: new FormControl(null, [Validators.required], this.forbiddenUser.bind(this)),
-      email: new FormControl(null, [Validators.required, Validators.email,
+    this.signupForm = new UntypedFormGroup({
+      username: new UntypedFormControl(null, [Validators.required], this.forbiddenUser.bind(this)),
+      email: new UntypedFormControl(null, [Validators.required, Validators.email,
         Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)], this.forbidenEmails.bind(this)),
-      password: new FormControl(null),
+      password: new UntypedFormControl(null),
     });
   }
   submitSignup() {
@@ -38,7 +38,7 @@ export class SignupComponent implements OnInit {
     //   }
     // });
   }
-  forbiddenUser(control: FormControl) {
+  forbiddenUser(control: UntypedFormControl) {
     clearTimeout(this.usernameId);
     console.log(this.controls);
     this.isPendingUsername = true;
@@ -60,7 +60,7 @@ export class SignupComponent implements OnInit {
       }, 1000);
     });
   }
-  forbidenEmails(control: FormControl): Promise<any> {
+  forbidenEmails(control: UntypedFormControl): Promise<any> {
     clearTimeout(this.emailId);
     this.isPendingEmail = true;
     return new Promise((resolve, reject) => {

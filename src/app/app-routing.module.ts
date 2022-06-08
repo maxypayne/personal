@@ -15,7 +15,8 @@ const routes: Routes = [
   // { path: 'rxjstuto',  loadChildren: () => import('./core/rxjstuto/rxjstuto.module').then(m => m.RxjstutoModule) },
   // { path: 'website',  loadChildren: () => import('./core/website/website.module').then(m => m.WebsiteModule) },
   // { path: 'fork-clone',  loadChildren: () => import('./core/fork/fork.module').then(m => m.ForkModule) }
-  { path: '',  loadChildren: () => import('./core/website/website.module').then(m => m.WebsiteModule) }
+  // { path: '',  loadChildren: () => import('./core/website/website.module').then(m => m.WebsiteModule) }
+  { path: '',  loadChildren: () => import('./core/portfolio/portfolio.module').then(m => m.PortfolioModule) }
 ];
 
 @NgModule({

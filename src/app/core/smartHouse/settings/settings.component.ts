@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { delay } from 'rxjs/operators';
 import { AppService } from '../../../app.service';
 interface General {
@@ -52,24 +52,24 @@ export class SettingsComponent implements OnInit {
     { brand: 'master', name: 'Nick Nolte', number: '8956 3452 6592 5629', expire: '12/23' },
   ];
   activeChoice = 'login';
-  form: FormGroup;
-  passwordForm: FormGroup;
+  form: UntypedFormGroup;
+  passwordForm: UntypedFormGroup;
   passwordMessage: string;
   passwordId: any;
   isPendingPassword: boolean;
   isPassUpdated: boolean;
   constructor(private app: AppService) { }
   ngOnInit() {
-    this.form = new FormGroup({
-      username: new FormControl(null),
-      email: new FormControl(null, [Validators.required, Validators.email,
+    this.form = new UntypedFormGroup({
+      username: new UntypedFormControl(null),
+      email: new UntypedFormControl(null, [Validators.required, Validators.email,
         Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)]),
-      tel: new FormControl(null),
+      tel: new UntypedFormControl(null),
     });
-    this.passwordForm = new FormGroup({
-      currentPassword: new FormControl(null, [Validators.required]),
-      newPassword: new FormControl(null, [Validators.required]),
-      comparePassword: new FormControl(null, [Validators.required]),
+    this.passwordForm = new UntypedFormGroup({
+      currentPassword: new UntypedFormControl(null, [Validators.required]),
+      newPassword: new UntypedFormControl(null, [Validators.required]),
+      comparePassword: new UntypedFormControl(null, [Validators.required]),
     } , {validators: this.checkPasswords.bind(this)});
   }
   checkPasswords() {
