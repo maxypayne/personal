@@ -68,6 +68,7 @@ export class AppService {
     return this.http.get(`${this.uri}/${url}`);
   }
   post(url, body) {
+    console.log(url)
     return this.http.post(`${this.uri}/${url}`, body, {});
   }
   delete(url, id) {

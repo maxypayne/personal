@@ -20,7 +20,7 @@ export default {
   },
   email: {
     type: 'login',
-    placeholder: 'Email',
+    placeholder: 'E-mail',
     length: 50,
     errorMessage: 'Merci d’indiquer votre email pour le suivi de la commande.',
   },
@@ -49,6 +49,7 @@ export default {
     errorMessage: 'Merci d’indiquer votre nom.',
   },
   prenom: {
+    placeholder: 'Prénom',
     type: 'textAz_firstMaj',
     description: 'Prénom',
     length: 40,

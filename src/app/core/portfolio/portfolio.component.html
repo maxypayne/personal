@@ -1,102 +1,95 @@
 <div id="portfolio">
   <div class="header">
-    <div class="header__left"></div>
+    <div class="header__left">
+      <div class="leaf1"></div>ML <div class="leaf2"></div></div>
     <div class="header__right">
       <div class="menu">
-        <a [href]="'#'+link" class="link" *ngFor="let link of links; index as i"><span class="green">{{'0.' + i}}</span>{{link}}</a>
+        <a [href]="'#'+link.id" class="link" *ngFor="let link of links">{{link.text}}</a>
       </div>
     </div>
   </div>
-  <section class="home">
-    <p class="small-green">Bonjou mon nom est,</p>
-    <p class="big">Maxim Lucov</p>
-    <p class="big grey">Le web est ma passion</p>
-    <p>
-      I'm a software engineer specializing in building (and occasionally
-      designing) exceptional digital experiences. Currently, I'm focused on
-      building accessible, human-centered products at Upstatement.
-    </p>
-    <a href="#about" class="accuei-button">Découvir ∆</a>
-  </section>
-  <section id="about" class="box">
-    <div class="boxTop">
-      <p>
-        <span class="box-number">01.</span>
-        <span class="box-title">À propos de moi</span>
-        <span class="box-line"></span>
-      </p>
-    </div>
-    <div class="box-container">
-      <div class="about-left">
-        <p>
-          Hello! My name is Brittany and I enjoy creating things that live on
-          the internet. My interest in web development started back in 2012
-          when I decided to try editing custom Tumblr themes - turns out
-          hacking together a custom reblog button taught me a lot about
-          HTML & CSS!
-        </p><br><br>
-        <p>
-          Fast-forward to today, and I've had the privilege of working at
-          an advertising agency, a start-up, a huge corporation, and
-          a student-led design studio. My main focus these days is building
-          accessible, inclusive products and digital experiences at
-          Upstatement for a variety of clients.
-        </p><br><br>
-        <p>
-          I also recently launched a course that covers everything you need
-          to build a web app with the Spotify API using Node & React.
-        </p><br><br>
-        <p>Here are a few technologies I've been working with recently:</p><br>
-        <ul class="skills"><li class="skill" *ngFor="let skill of skills">=> {{skill}}</li></ul>
-      </div>
-      <div class="about-right">
-        <div class="img-container">
-          <img class="mine" src="../../../assets/portfolio" alt="Silence is golden">
+  <div class="wrapper">
+    <div class="container">
+      <section id="home" class="box">
+        <div class="home-container">
+          <p class="small-green">Bonjour mon nom est,</p>
+          <p class="big">Maxim Lucov</p>
+          <p class="big grey">Web devéloppeur</p>
+          <p class="description">
+            Création de sites et applications web, en passant par l'étude du besoin, la conception, la realisation du projet et la maintenance.
+          </p>
+          <a href="#about" class="cta">Découvir</a>
         </div>
-      </div>
+      </section>
+      <section id="about">
+        <p class="about-title">Quelques lignes me concernant</p>
+        <div class="about-container">
+          <div class="about-left">
+            <p>
+              Passioneé par les ordinateurs depuis mon adolescence, j'ai toujours fait preuve de beaucoup de curiosité
+              et d'enthousiasme concernant le domaine de l'informatique. <br><br>
+              Autodidacte et très investi, je me suis prêté au jeu et j'ai appris la programation tout seul, puis j'ai consolidé
+              mes compétences en suivant des cours intensifs en informatique. <br><br>
+              Depuis que je me suis lancé dans cette belle aventure, je n'ai jamais perdu mon enthousiasme lorsque j'écris mes lignes de code.
+              Je trouve cela amusant, et le résultat final me procure un grand plaisir.
+            </p><br>
+            <p>
+              Gestion des projets via les différentes phases (conception, réalisation, recette, documentation, maintenance etc.),
+              utilisation des téchniques de la méthode KANBAN, mise en place de l'architecture des bases de données,
+              intégration des APIs nécessaires et du système de versionning, tout cela réuni fait partie de mon passionant quotidien.
+            </p> <br>
+             <p>
+                Pour la reussite de mes projets j'ai utilise les technologies suivantes
+            </p><br>
+            <ul class="skills"><li class="skill" *ngFor="let skill of skills"><div class="arrow">∆</div> {{skill.text}}</li></ul>
+          </div>
+          <div class="about-right">
+            <div class="img-container">
+              <img class="mine" src="../../../assets/port.jpeg">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="projects">
+        <p class="projects-title">Mes projets</p>
+        <div class="projects-container">
+          <div class="project" *ngFor="let project of projects">
+            <div class="project-top">
+              <div class="icons icon-folder"></div>
+              <a [href]="project.link" target="_blank" class="icons icon-open_in_new" *ngIf="project.link"></a>
+              <span class="private" *ngIf="!project.link">Privé</span>
+            </div>
+            <p class="project-title">{{project.title}}</p>
+            <p class="project-description">{{project.description}}</p>
+            <div class="languages">
+              <span class="langue" *ngFor="let langue of project.languages">{{langue}}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+<!--      <section id="codewars" class="box">-->
+<!--        <span class="box-number">Codewars</span>-->
+<!--        <div #editor style="width: 700px;height: 400px;"></div>-->
+<!--        <pre><code >-->
+
+<!--        </code></pre>-->
+<!--      </section>-->
+      <section id="contact">
+        <p class="contact-title">Contact</p>
+        <div class="contact-container">
+          <app-inp [inpAttr]="{id: 'prenom', cssClass: 'contact'}" (changeVal)="handleChange($event)"></app-inp>
+          <div class="mt20">
+            <app-inp [inpAttr]="{id: 'email', cssClass: 'contact'}" (changeVal)="handleChange($event)"></app-inp>
+          </div>
+          <div class="mt20">
+            <app-textarea [areaAttr]="{ id: 'message', cssClass: 'dark' }" (changeVal)="handleChange($event)"></app-textarea>
+          </div>
+          <div class="ctaContainer">
+            <button class="cta" (click)="sendMessage()">Envoyer</button>
+            <div class="error" *ngIf="error">{{error}}</div>
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
-  <section id="experience" class="box">
-    <div class="boxTop">
-      <p>
-        <span class="box-number">02.</span>
-        <span class="box-title">J'ai travaillé</span>
-        <span class="box-line"></span>
-      </p>
-    </div>
-    <div class="box-container">
-      <p>Responsable front-end che Elaque</p>
-      <p>Avril 2018 - Présent</p>
-      <p>Nettoyer les vitres</p>
-      <p>Nettoyer la cuisine</p>
-      <p>Nettoyer la mairie</p>
-    </div>
-  </section>
-  <section id="codewars" class="box">
-    <div class="boxTop">
-      <p>
-        <span class="box-number">01.</span>
-        <span class="box-title">À propos de moi</span>
-        <span class="box-line"></span>
-      </p>
-    </div>
-  </section>
-  <section id="work" class="box">
-    <div class="boxTop">
-      <p>
-        <span class="box-number">01.</span>
-        <span class="box-title">À propos de moi</span>
-        <span class="box-line"></span>
-      </p>
-    </div>
-  </section>
-  <section id="contact" class="box">
-    <div class="boxTop">
-      <p>
-        <span class="box-number">01.</span>
-        <span class="box-title">À propos de moi</span>
-        <span class="box-line"></span>
-      </p>
-    </div>
-  </section>
+  </div>
 </div>

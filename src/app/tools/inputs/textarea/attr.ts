@@ -7,7 +7,7 @@ export default {
   message: {
     type: 'message',
     length: 250,
-    placeholder: 'Your message',
+    placeholder: 'Votre message',
   },
 };
 

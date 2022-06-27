@@ -46,62 +46,425 @@ $font: 'Source Sans Pro', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1;
-  &.iconMongodb:before {content: "\e900"}
-  &.iconNodejs:before {content: "\e901"}
-  &.iconAngular:before {content: "\e903"}
-  &.iconBootstrap:before {content: "\e904"}
-  &.iconAdd:before {content: "\e905"}
-  &.iconAddFull:before {content: "\e906"}
-  &.iconAddEmpty:before {content: "\e907"}
-  &.iconArrowBack:before {content: "\e909"}
-  &.iconDropdown:before {content: "\e90a"}
-  &.iconCalendar:before {content: "\e90b"}
-  &.iconCar:before {content: "\e90c"}
-  &.iconCheck:before {content: "\e911"}
-  &.iconClose:before {content: "\e912"}
-  &.iconCard:before {content: "\e913"}
-  &.iconDelete:before {content: "\e914"}
-  &.iconDocument:before {content: "\e915"}
-  &.iconDownload:before {content: "\e916"}
-  &.iconEdit:before {content: "\e917"}
-  &.iconError:before {content: "\e918"}
-  &.iconFlash:before {content: "\e919"}
-  &.iconHelp:before {content: "\e91a"}
-  &.iconLocationOff:before {content: "\e91b"}
-  &.iconLocationOn:before {content: "\e91c"}
-  &.iconLockFull:before {content: "\e91d"}
-  &.iconLockEmpty:before {content: "\e91e"}
-  &.iconMail:before {content: "\e91f"}
-  &.iconMenu:before {content: "\e920"}
-  &.iconDollar:before {content: "\e921"}
-  &.iconNotifFull:before {content: "\e922"}
-  &.iconNotifEmpty:before {content: "\e923"}
-  &.iconOngoing:before {content: "\e924"}
-  &.iconPeople:before {content: "\e925"}
-  &.iconPerson:before {content: "\e926"}
-  &.iconTel:before {content: "\e927"}
-  &.iconPlan:before {content: "\e928"}
-  &.iconReceipt:before {content: "\e92b"}
-  &.iconSearch:before {content: "\e92d"}
-  &.iconCamion:before {content: "\e92e"}
-  &.iconVisibilityOff:before {content: "\e930"}
-  &.icon-VisibilityOn:before {content: "\e931"}
-  &.iconLibrary:before {content: "\e932"}
-  &.iconHammer:before {content: "\e933"}
-  &.iconEuro:before {content: "\e934"}
-  &.iconShopping:before {content: "\e93b"}
-  &.iconClock:before {content: "\e94f"}
-  &.iconDatabase:before {content: "\e965"}
-  &.iconStar:before {content: "\e9d9"}
-  &.iconTerminal:before {content: "\ea82"}
-  &.iconGithub:before {content: "\eab0"}
-  &.iconHtml:before {content: "\eae8"}
-  &.iconCss:before {content: "\eae9"}
-  &.iconGit:before {content: "\eaea"}
-  &.iconFacebook:before {content: "\ea90"}
-  &.iconWhatsapp:before {content: "\ea93"}
-  &.iconTwitter:before {content: "\ea96"}
-  &.iconLinkedin:before {content: "\eaca"}
+  //&.iconMongodb:before {content: "\e900"}
+  //&.iconNodejs:before {content: "\e901"}
+  //&.iconAngular:before {content: "\e903"}
+  //&.iconBootstrap:before {content: "\e904"}
+  //&.iconAdd:before {content: "\e905"}
+  //&.iconAddFull:before {content: "\e906"}
+  //&.iconAddEmpty:before {content: "\e907"}
+  //&.iconArrowBack:before {content: "\e909"}
+  //&.iconDropdown:before {content: "\e90a"}
+  //&.iconCalendar:before {content: "\e90b"}
+  //&.iconCar:before {content: "\e90c"}
+  //&.iconCheck:before {content: "\e911"}
+  //&.iconClose:before {content: "\e912"}
+  //&.iconCard:before {content: "\e913"}
+  //&.iconDelete:before {content: "\e914"}
+  //&.iconDocument:before {content: "\e915"}
+  //&.iconDownload:before {content: "\e916"}
+  //&.iconEdit:before {content: "\e917"}
+  //&.iconError:before {content: "\e918"}
+  //&.iconFlash:before {content: "\e919"}
+  //&.iconHelp:before {content: "\e91a"}
+  //&.iconLocationOff:before {content: "\e91b"}
+  //&.iconLocationOn:before {content: "\e91c"}
+  //&.iconLockFull:before {content: "\e91d"}
+  //&.iconLockEmpty:before {content: "\e91e"}
+  //&.iconMail:before {content: "\e91f"}
+  //&.iconMenu:before {content: "\e920"}
+  //&.iconDollar:before {content: "\e921"}
+  //&.iconNotifFull:before {content: "\e922"}
+  //&.iconNotifEmpty:before {content: "\e923"}
+  //&.iconOngoing:before {content: "\e924"}
+  //&.iconPeople:before {content: "\e925"}
+  //&.iconPerson:before {content: "\e926"}
+  //&.iconTel:before {content: "\e927"}
+  //&.iconPlan:before {content: "\e928"}
+  //&.iconReceipt:before {content: "\e92b"}
+  //&.iconSearch:before {content: "\e92d"}
+  //&.iconCamion:before {content: "\e92e"}
+  //&.iconVisibilityOff:before {content: "\e930"}
+  //&.iconVisibilityOn:before {content: "\e931"}
+  //&.iconLibrary:before {content: "\e932"}
+  //&.iconHammer:before {content: "\e933"}
+  //&.iconEuro:before {content: "\e934"}
+  //&.iconShopping:before {content: "\e93b"}
+  //&.iconClock:before {content: "\e94f"}
+  //&.iconDatabase:before {content: "\e965"}
+  //&.iconStar:before {content: "\e9d9"}
+  //&.iconTerminal:before {content: "\ea82"}
+  //&.iconGithub:before {content: "\eab0"}
+  //&.iconHtml:before {content: "\eae8"}
+  //&.iconCss:before {content: "\eae9"}
+  //&.iconGit:before {content: "\eaea"}
+  //&.iconFacebook:before {content: "\ea90"}
+  //&.iconWhatsapp:before {content: "\ea93"}
+  //&.iconTwitter:before {content: "\ea96"}
+  //&.iconLinkedin:before {content: "\eaca"}
+  &.icon-mongodb:before {
+    content: "\e941";
+  }
+  &.icon-nodejs:before {
+    content: "\e942";
+  }
+  &.icon-angular:before {
+    content: "\e943";
+  }
+  &.icon-bootstrap:before {
+    content: "\e944";
+  }
+  &.icon-add:before {
+    content: "\e945";
+  }
+  &.icon-addFull:before {
+    content: "\e946";
+  }
+  &.icon-addEmpty:before {
+    content: "\e947";
+  }
+  &.icon-arrowBack:before {
+    content: "\e948";
+  }
+  &.icon-dropdown:before {
+    content: "\e949";
+  }
+  &.icon-calendar:before {
+    content: "\e94a";
+  }
+  &.icon-car:before {
+    content: "\e94b";
+  }
+  &.icon-check:before {
+    content: "\e94c";
+  }
+  &.icon-close:before {
+    content: "\e94d";
+  }
+  &.icon-card:before {
+    content: "\e94e";
+  }
+  &.icon-delete:before {
+    content: "\e94f";
+  }
+  &.icon-document:before {
+    content: "\e950";
+  }
+  &.icon-downlaod:before {
+    content: "\e951";
+  }
+  &.icon-edit:before {
+    content: "\e952";
+  }
+  &.icon-error:before {
+    content: "\e953";
+  }
+  &.icon-flash:before {
+    content: "\e954";
+  }
+  &.icon-help:before {
+    content: "\e955";
+  }
+  &.icon-locationOff:before {
+    content: "\e956";
+  }
+  &.icon-locationOn:before {
+    content: "\e957";
+  }
+  &.icon-lockFull:before {
+    content: "\e958";
+  }
+  &.icon-lockEmpty:before {
+    content: "\e959";
+  }
+  &.icon-mail:before {
+    content: "\e95a";
+  }
+  &.icon-menu:before {
+    content: "\e95b";
+  }
+  &.icon-dollar:before {
+    content: "\e95c";
+  }
+  &.icon-notifFull:before {
+    content: "\e95d";
+  }
+  &.icon-notifEmpty:before {
+    content: "\e95e";
+  }
+  &.icon-ongoing:before {
+    content: "\e95f";
+  }
+  &.icon-people:before {
+    content: "\e960";
+  }
+  &.icon-person:before {
+    content: "\e961";
+  }
+  &.icon-tel:before {
+    content: "\e962";
+  }
+  &.icon-plan:before {
+    content: "\e963";
+  }
+  &.icon-receipt:before {
+    content: "\e964";
+  }
+  &.icon-search:before {
+    content: "\e965";
+  }
+  &.icon-camion:before {
+    content: "\e966";
+  }
+  &.icon-visibilityOff:before {
+    content: "\e967";
+  }
+  &.icon-VisvisibilityOnibility_ON_Icon:before {
+    content: "\e968";
+  }
+  &.icon-library:before {
+    content: "\e969";
+  }
+  &.icon-hammer:before {
+    content: "\e96a";
+  }
+  &.icon-euro:before {
+    content: "\e96b";
+  }
+  &.icon-shopping:before {
+    content: "\e96c";
+  }
+  &.icon-clock:before {
+    content: "\e96d";
+  }
+  &.icon-database:before {
+    content: "\e96e";
+  }
+  &.icon-star:before {
+    content: "\e9d9";
+  }
+  &.icon-terminal:before {
+    content: "\ea82";
+  }
+  &.icon-facebook1:before {
+    content: "\ea91";
+  }
+  &.icon-whatsapp1:before {
+    content: "\ea94";
+  }
+  &.icon-twitter1:before {
+    content: "\ea97";
+  }
+  &.icon-github:before {
+    content: "\eab0";
+  }
+  &.icon-linkedin21:before {
+    content: "\eacb";
+  }
+  &.icon-html:before {
+    content: "\eae8";
+  }
+  &.icon-css:before {
+    content: "\eae9";
+  }
+  &.icon-git1:before {
+    content: "\eaea";
+  }
+  &.icon-folder:before {
+    content: "\e940";
+  }
+  &.icon-link:before {
+    content: "\e900";
+  }
+  &.icon-notifications:before {
+    content: "\e901";
+  }
+  &.icon-date_range:before {
+    content: "\e902";
+  }
+  &.icon-calendar_today:before {
+    content: "\e903";
+  }
+  &.icon-event:before {
+    content: "\e904";
+  }
+  &.icon-schedule:before {
+    content: "\e905";
+  }
+  &.icon-info:before {
+    content: "\e906";
+  }
+  &.icon-account_circle:before {
+    content: "\e907";
+  }
+  &.icon-help:before {
+    content: "\e908";
+  }
+  &.icon-manage_accounts:before {
+    content: "\e909";
+  }
+  &.icon-lock:before {
+    content: "\e90a";
+  }
+  &.icon-calendar_month:before {
+    content: "\e90b";
+  }
+  &.icon-assistant_navigation:before {
+    content: "\e90c";
+  }
+  &.icon-sort_by_alpha:before {
+    content: "\e90d";
+  }
+  &.icon-keyboard_voice:before {
+    content: "\e90e";
+  }
+  &.icon-switch_access_shortcut:before {
+    content: "\e90f";
+  }
+  &.icon-publish:before {
+    content: "\e910";
+  }
+  &.icon-close_fullscreen:before {
+    content: "\e911";
+  }
+  &.icon-terminal:before {
+    content: "\e912";
+  }
+  &.icon-library_add:before {
+    content: "\e913";
+  }
+  &.icon-backspace:before {
+    content: "\e914";
+  }
+  &.icon-key:before {
+    content: "\e915";
+  }
+  &.icon-reply:before {
+    content: "\e916";
+  }
+  &.icon-manage_search:before {
+    content: "\e917";
+  }
+  &.icon-open_in_full:before {
+    content: "\e918";
+  }
+  &.icon-add_box:before {
+    content: "\e919";
+  }
+  &.icon-sync:before {
+    content: "\e91a";
+  }
+  &.icon-done_all:before {
+    content: "\e91b";
+  }
+  &.icon-sort:before {
+    content: "\e91c";
+  }
+  &.icon-filter_list:before {
+    content: "\e91d";
+  }
+  &.icon-bolt:before {
+    content: "\e91e";
+  }
+  &.icon-file_upload:before {
+    content: "\e91f";
+  }
+  &.icon-radio_button_checked:before {
+    content: "\e920";
+  }
+  &.icon-apps:before {
+    content: "\e921";
+  }
+  &.icon-delete_forever:before {
+    content: "\e922";
+  }
+  &.icon-radio_button_unchecked:before {
+    content: "\e923";
+  }
+  &.icon-more_horiz:before {
+    content: "\e924";
+  }
+  &.icon-expand_less:before {
+    content: "\e925";
+  }
+  &.icon-check_box_outline_blank:before {
+    content: "\e926";
+  }
+  &.icon-more_vert:before {
+    content: "\e927";
+  }
+  &.icon-check_box:before {
+    content: "\e928";
+  }
+  &.icon-open_in_new:before {
+    content: "\e929";
+  }
+  &.icon-login:before {
+    content: "\e92a";
+  }
+  &.icon-star:before {
+    content: "\e92b";
+  }
+  &.icon-arrow_forward_ios:before {
+    content: "\e92c";
+  }
+  &.icon-add_circle:before {
+    content: "\e92d";
+  }
+  &.icon-arrow_back_ios:before {
+    content: "\e92e";
+  }
+  &.icon-cancel:before {
+    content: "\e92f";
+  }
+  &.icon-file_download:before {
+    content: "\e930";
+  }
+  &.icon-arrow_forward:before {
+    content: "\e931";
+  }
+  &.icon-check_circle:before {
+    content: "\e932";
+  }
+  &.icon-favorite:before {
+    content: "\e933";
+  }
+  &.icon-add:before {
+    content: "\e934";
+  }
+  &.icon-delete:before {
+    content: "\e935";
+  }
+  &.icon-logout:before {
+    content: "\e936";
+  }
+  &.icon-arrow_back:before {
+    content: "\e937";
+  }
+  &.icon-chevron_right:before {
+    content: "\e938";
+  }
+  &.icon-expand_more:before {
+    content: "\e939";
+  }
+  &.icon-done:before {
+    content: "\e93a";
+  }
+  &.icon-settings:before {
+    content: "\e93b";
+  }
+  &.icon-close:before {
+    content: "\e93c";
+  }
+  &.icon-menu:before {
+    content: "\e93d";
+  }
+  &.icon-home:before {
+    content: "\e93e";
+  }
+  &.icon-search:before {
+    content: "\e93f";
+  }
 }
 // COLOR
 $white: #FFFFFF;
@@ -123,6 +486,7 @@ $redF1: #F13959;
 $smartHouse: #252e41;
 $shadow198-05: rgba(198, 203, 208, 0.5);
 $greyDF: #DFE6EC;
+$green64: #64ffda;
 .alignCenterXY  {
   display: flex;
   align-items: center;
@@ -198,8 +562,15 @@ $greyDF: #DFE6EC;
   }
 }
 
-// CHECKBOX
-
+.ace_gutter {
+  background: #112240 !important;
+}
+.ace_gutter-cell {
+  color: $green64;
+}
+.ace-dracula {
+  background-color: #112240 !important;
+}
 @mixin load {
   height: 22px;
   width: 22px;

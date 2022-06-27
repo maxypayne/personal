@@ -4,7 +4,6 @@ import {
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 import attrGlobal from './attr';
-// import check from './check';
 import { AppService } from "../../../app.service";
 
 @Component({

@@ -9,14 +9,13 @@
   }
   .inputContainer {
     position: relative;
-    border: 1px solid $grey81;
+    border: 1px solid $green64;
     border-radius: 5px;
-    //background-color: $greyF5;
     &.hasErr {
       border-color: $red;
     }
     &.active {
-      border-color: $blue19;
+      border-color: white;
     }
     &.isLock {
       border-color: $greyDF;
@@ -73,7 +72,7 @@
         border-radius: 5px;
         //background-color: $greyF5;
         &::placeholder {
-          color: $grey57;
+          color: rgba(100,255,218,0.4);
         }
         &.isLock {
           background-color: unset;

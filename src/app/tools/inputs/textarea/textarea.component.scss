@@ -1,4 +1,5 @@
 @import "../../../../styles/variables";
+$green64: #64ffda;
 #textArea {
   width: 100%;
   position: relative;
@@ -21,7 +22,7 @@
   textarea {
     background-color: transparent;
     width: 100%;
-    border: 1px solid $grey81;
+    border: 1px solid $green64;
     resize: none;
     padding: 10px;
     height: 120px;
@@ -29,7 +30,7 @@
     box-sizing: border-box;
     color: white;
     &::placeholder {
-      color: $grey57;
+      color: rgba(100,255,218,0.4);
     }
     &.active {
       border: 1px solid white;
