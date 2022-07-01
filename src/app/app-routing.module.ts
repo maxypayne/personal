@@ -5,7 +5,7 @@ import { PipesModule } from "./tools/pipes/pipes.module";
 
 const routes: Routes = [
   // { path: 'recipes',  loadChildren: () => import('./core/recipes/recipes.module').then(m => m.RecipesModule) },
-  // { path: 'games',  loadChildren: () => import('./core/games/games.module').then(m => m.GamesModule) },
+  { path: 'games',  loadChildren: () => import('./core/games/games.module').then(m => m.GamesModule) },
   // { path: 'jobs',  loadChildren: () => import('./core/jobs/jobs.module').then(m => m.JobsModule) },
   // { path: 'forms',  loadChildren: () => import('./core/forms/formsMain.module').then(m => m.FormsMainModule) },
   // { path: 'social',  loadChildren: () => import('./core/social/social.module').then(m => m.SocialModule) },
