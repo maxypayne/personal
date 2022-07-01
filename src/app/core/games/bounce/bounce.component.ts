@@ -89,7 +89,9 @@ export class BounceComponent implements OnInit {
   detectColition() {
     this.hasColition = false;
     this.obstacles.forEach(x => {
-      this.hasColition = x.y === this.y + this.velocity;
+      if (!this.hasColition) {
+        this.hasColition = x.y === (this.y + this.velocity);
+      }
     })
     if (this.y + 20 + this.velocity > this.height) {
       this.hasColition = true;
