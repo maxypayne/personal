@@ -1,5 +1,6 @@
 <div id="bounce_wrapper">
-  <button (click)="draw(true)">Start</button>
-  <button (click)="draw(false)">Pause</button>
+  <button class="cta1" (click)="draw(true)">Start</button>
+  <button class="cta1" (click)="draw(false)">Pause</button>
+  {{hasColition + ' collision'}}
   <canvas id="bounce" #canvas width="900" height="600"></canvas>
 </div>
