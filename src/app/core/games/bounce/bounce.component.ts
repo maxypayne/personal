@@ -29,7 +29,6 @@ export class BounceComponent implements OnInit {
   constructor() {}
   @HostListener('document:keydown', ['$event'])
   keyDown(e) {
-    this.velocity = 10;
     if (['ArrowLeft', 'Left'].includes(e.key)) { this.keys.left = true }
     if (['ArrowRight', 'Right'].includes(e.key)) { this.keys.right = true }
     if (['ArrowUp', 'Up'].includes(e.key)) { this.keys.up = true }
@@ -37,8 +36,6 @@ export class BounceComponent implements OnInit {
   }
   @HostListener('document:keyup', ['$event'])
   keyUp(e) {
-    console.log('keyup')
-    // this.velocity = 1;
     if (['ArrowLeft', 'Left'].includes(e.key)) { this.keys.left = false }
     if (['ArrowRight', 'Right'].includes(e.key)) { this.keys.right = false }
     if (['ArrowUp', 'Up'].includes(e.key)) { this.keys.up = false }
@@ -52,24 +49,21 @@ export class BounceComponent implements OnInit {
   draw(state) {
     this.ctx.clearRect(0, 0, this.width, this.height);
     const keyPressed = Object.values(this.keys).some(Boolean);
-    // console.log(this.y, this.velocity)
-    console.log({actual: this.y + 20, sec: this.y + 20 + this.velocity, x: this.x})
     if (keyPressed) {
-      this.velocity = 10;
+      this.velocity = 5;
       if (this.keys.right) { this.x += this.velocity }
       if (this.keys.left) { this.x -= this.velocity }
-      if (this.keys.up) { this.y -= this.velocity }
+      if (this.keys.up) { this.y -= 20 }
       if (this.keys.down) { this.x += this.velocity }
-    } else if (!this.hasColition) {
-      this.y += this.velocity;
-      this.velocity += this.acceleration;
     } else {
-      this.velocity = 0;
+      this.velocity = !this.hasColition ? this.velocity += this.acceleration : 0;
+      this.y += this.velocity;
     }
     this.detectColition();
     this.drawBall();
     this.drawObstacles();
     if (state) {
+      // setInterval(this.draw.bind(this), 100);
       requestAnimationFrame(this.draw.bind(this));
     }
   }
@@ -90,15 +84,10 @@ export class BounceComponent implements OnInit {
     this.ctx.closePath();
   }
   detectColition() {
-    const padlle = { x : 100, y: 250 };
-    this.hasColition = false;
-    const bottom = this.y + this.player.height + this.velocity > this.height;
-    const lestThan = this.y + this.player.height <= padlle.y;
-    const biggerThan = this.y + this.player.height + this.velocity >= 250;
-    // const checkX = this.x >= 100 && this.x <= 300;
-    if (bottom) {
-      console.log(this.y)
-      this.hasColition = true;
-    }
+    const bottom = this.y + this.player.height + this.velocity >= this.height;
+    const state = this.obstacles.some(obstacle => {
+      return this.y + this.player.height <= obstacle.y && this.y + this.player.height + this.velocity >= obstacle.y && this.x >= obstacle.x && this.x <= obstacle.x + obstacle.width;
+    });
+    this.hasColition = bottom || state;
   }
 }
