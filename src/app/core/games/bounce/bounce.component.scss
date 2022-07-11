@@ -1,0 +1,12 @@
+#bounce_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #0d1b30;
+  width: 100vw;
+  height: 100vh;
+  #bounce {
+    background-color: #2e4364;
+  }
+}

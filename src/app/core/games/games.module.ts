@@ -4,11 +4,13 @@ import { CommonModule } from "@angular/common";
 import { GamesComponent } from "./games.component";
 import { PingpongComponent } from "./pingpong/pingpong.component";
 import { PongComponent } from "./pong/pong.component";
+import { BounceComponent } from "./bounce/bounce.component";
 
 const routes: Routes = [
   { path: '', component: GamesComponent, children: [
       { path: 'ping-pong', component: PingpongComponent},
       { path: 'pong', component: PongComponent},
+      { path: 'bounce', component: BounceComponent},
       { path: '**', redirectTo: '' }
     ],
   },
@@ -17,7 +19,8 @@ const routes: Routes = [
   declarations: [
     GamesComponent,
     PingpongComponent,
-    PongComponent
+    PongComponent,
+    BounceComponent,
   ],
   imports: [
     [RouterModule.forChild(routes)],
@@ -26,7 +29,8 @@ const routes: Routes = [
   exports: [
     GamesComponent,
     PingpongComponent,
-    PongComponent
+    PongComponent,
+    BounceComponent
   ]
 })
 
